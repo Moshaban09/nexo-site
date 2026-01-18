@@ -1,4 +1,5 @@
 import { Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -18,9 +19,9 @@ export const Footer = () => {
             <h3 className="text-sm font-semibold text-white tracking-wider uppercase">Project</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <a href="/docs" className="text-sm text-neutral-400 hover:text-white transition-colors">
+                <Link to="/docs" className="text-sm text-neutral-400 hover:text-white transition-colors">
                   Documentation
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

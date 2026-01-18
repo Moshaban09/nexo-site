@@ -1,4 +1,4 @@
-import { Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from './ui/Button';
@@ -6,6 +6,15 @@ import { Button } from './ui/Button';
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDocsExpanded, setIsDocsExpanded] = useState(false);
+
+  const docsSubPages = [
+    { name: 'Introduction', path: '/docs' },
+    { name: 'Installation', path: '/docs/installation' },
+    { name: 'Project Structure', path: '/docs/structure' },
+    { name: 'Presets', path: '/docs/presets' },
+    { name: 'CLI Commands', path: '/docs/cli-commands' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,17 +99,44 @@ export const Navbar = () => {
             >
               Home
             </NavLink>
-            <NavLink
-              to="/docs"
-              className={({ isActive }) =>
-                `block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                  isActive ? 'bg-white/10 text-white' : 'text-neutral-300 hover:text-white hover:bg-white/5'
-                }`
-              }
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Docs
-            </NavLink>
+            {/* Docs Accordion */}
+            <div>
+              <button
+                onClick={() => setIsDocsExpanded(!isDocsExpanded)}
+                className={`w-full flex items-center justify-between px-3 py-2 text-base font-medium rounded-md transition-colors ${
+                  isDocsExpanded ? 'bg-white/10 text-white' : 'text-neutral-300 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <span>Docs</span>
+                <ChevronDown
+                  size={18}
+                  className={`transition-transform duration-200 ${isDocsExpanded ? 'rotate-180' : ''}`}
+                />
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-200 ${
+                  isDocsExpanded ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="pl-4 mt-1 space-y-1">
+                  {docsSubPages.map((page) => (
+                    <NavLink
+                      key={page.path}
+                      to={page.path}
+                      end={page.path === '/docs'}
+                      className={({ isActive }) =>
+                        `block px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                          isActive ? 'bg-blue-500/20 text-blue-300' : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                        }`
+                      }
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {page.name}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            </div>
             <a
               href="https://github.com/Moshaban09/create-nexo"
               target="_blank"

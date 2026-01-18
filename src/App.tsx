@@ -3,6 +3,7 @@ import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-d
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
+const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
 const DocsIntro = lazy(() => import('./pages/docs/Introduction').then(m => ({ default: m.DocsIntro })));
 const DocsInstallation = lazy(() => import('./pages/docs/Installation').then(m => ({ default: m.DocsInstallation })));
 const DocsStructure = lazy(() => import('./pages/docs/Structure').then(m => ({ default: m.DocsStructure })));
@@ -30,6 +31,9 @@ function App() {
           <Route path="/docs/structure" element={<DocsStructure />} />
           <Route path="/docs/presets" element={<DocsPresets />} />
           <Route path="/docs/cli-commands" element={<DocsCLICommands />} />
+
+          {/* 404 Catch-all Route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Router>
