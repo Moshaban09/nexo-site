@@ -1,15 +1,23 @@
-import { Layout } from '../components/Layout';
-import { Features } from '../components/sections/Features';
-import { Hero } from '../components/sections/Hero';
-import { ModernCTA } from '../components/sections/ModernCTA';
-import { TechStack } from '../components/sections/TechStack';
+import {
+  Comparison,
+  FAQ,
+  Features,
+  Hero,
+  HowItWorks,
+  Layout,
+  ModernCTA,
+  Templates,
+} from "..";
 
 export const Home = () => {
   return (
     <Layout>
       <Hero />
       <Features />
-      <TechStack />
+      <HowItWorks />
+      <Templates />
+      <Comparison />
+      <FAQ />
       <ModernCTA />
     </Layout>
   );

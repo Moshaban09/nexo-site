@@ -1,0 +1,455 @@
+{
+  "basicInfo": {
+    "toolName": "NEXO CLI",
+    "packageName": "create-nexo",
+    "version": "1.1.4",
+    "category": "CLI scaffolding tool",
+    "primaryPurpose": "Scaffold and orchestrate modern frontend projects with extensible configurations",
+    "detailedDescription": "NEXO is a next-generation, extensible CLI for scaffolding and orchestrating modern frontend projects. It supports multiple frameworks (React, with Next.js coming soon), advanced TypeScript/JavaScript variants, and a wide array of styling, UI, and state management options. It focuses on developer experience, performance, and flexibility.",
+    "repository": "git+https://github.com/Moshaban09/create-nexo.git",
+    "license": "MIT",
+    "author": "Mohamed Shaban",
+    "homepage": "https://nexo-site-ten.vercel.app/"
+  },
+  "techStack": {
+    "coreFramework": "Node.js (CLI)",
+    "buildTool": "esbuild (for CLI build), Vite (for scaffolded projects)",
+    "language": "TypeScript",
+    "styling": [
+      "Tailwind CSS",
+      "CSS Modules",
+      "Sass/SCSS",
+      "Plain CSS"
+    ],
+    "uiLibraries": [
+      "shadcn/ui",
+      "Radix UI",
+      "Mantine",
+      "HeroUI",
+      "Ant Design",
+      "Chakra UI"
+    ],
+    "dependencies": {
+      "production": [
+        "@clack/prompts",
+        "chalk",
+        "commander",
+        "execa",
+        "fs-extra",
+        "ora",
+        "picocolors"
+      ],
+      "development": [
+        "esbuild",
+        "eslint",
+        "prettier",
+        "typescript",
+        "vitest"
+      ]
+    },
+    "nodeVersion": ">=18.0.0",
+    "packageManager": [
+      "npm"
+    ]
+  },
+  "features": {
+    "features": [
+      {
+        "name": "Intelligent Directory Handling",
+        "technical": "Detects if target directory is non-empty, scans package.json to infer previous configuration (framework, language, styling), and offers 'Continue' or 'Overwrite' options.",
+        "userBenefit": "Prevents accidental data loss and speeds up re-initialization of existing projects.",
+        "isUnique": true,
+        "priority": "high"
+      },
+      {
+        "name": "Lazy Loading Architecture",
+        "technical": "Dynamically loads configurators only when selected, reducing startup time and memory footprint.",
+        "userBenefit": "Faster CLI responsiveness.",
+        "isUnique": true,
+        "priority": "medium"
+      },
+      {
+        "name": "Multi-Variant Support",
+        "technical": "Supports TS/JS with SWC or React Compiler variants.",
+        "userBenefit": "Flexibility to choose build performance vs standard setups.",
+        "isUnique": false,
+        "priority": "high"
+      },
+      {
+        "name": "Dry Run Mode",
+        "technical": "Simulates the entire creation process and generates a file tree preview without writing to disk.",
+        "userBenefit": "Safe experimentation before scaffolding.",
+        "isUnique": true,
+        "priority": "medium"
+      }
+    ],
+    "defaultConfiguration": "React + TypeScript + Tailwind CSS",
+    "customizationOptions": "Framework, Language (TS/JS), Compiler (Standard/SWC/React Compiler), Styling, UI Library, State Management, Routing, Data Fetching, Icons, Project Structure",
+    "scalability": "Designed for scalability with modular configurators and 'Feature-based' structure option.",
+    "performance": {
+      "buildTime": "~0.30s (CLI build)",
+      "devServerStartup": "Instant (Vite projects)",
+      "bundleSize": "~118KB (CLI bundle)"
+    }
+  },
+  "cliCommands": {
+    "installation": {
+      "npm": "npm create nexo@latest",
+      "yarn": "yarn create nexo",
+      "pnpm": "pnpm create nexo",
+      "global": "npm install -g create-nexo"
+    },
+    "mainCommand": "nexo",
+    "commands": [
+      {
+        "command": "nexo create [name]",
+        "description": "Create a new project",
+        "flags": [
+          {
+            "flag": "--dir <directory>",
+            "shorthand": "-d",
+            "description": "Target directory",
+            "options": [],
+            "default": "."
+          },
+          {
+            "flag": "--dry-run",
+            "shorthand": null,
+            "description": "Preview changes without creating files",
+            "options": [],
+            "default": "false"
+          },
+          {
+            "flag": "--preset <preset>",
+            "shorthand": null,
+            "description": "Use a preset configuration",
+            "options": [
+              "saas",
+              "dashboard",
+              "landing",
+              "minimal"
+            ],
+            "default": "null"
+          },
+          {
+            "flag": "--parallel",
+            "shorthand": null,
+            "description": "Use parallel execution for faster setup",
+            "options": [],
+            "default": "false"
+          }
+        ],
+        "examples": [
+          "nexo create my-app",
+          "nexo create my-app --dry-run",
+          "nexo create my-saas --preset=saas"
+        ]
+      },
+      {
+        "command": "nexo generate <type> <name>",
+        "description": "Generate a component, hook, page, or feature",
+        "flags": [
+           {
+            "flag": "--js",
+            "shorthand": null,
+            "description": "Use JavaScript instead of TypeScript",
+            "options": [],
+            "default": "false"
+           },
+           {
+             "flag": "--with-tests",
+             "shorthand": null,
+             "description": "Include test file",
+             "options": [],
+             "default": "false"
+           }
+        ],
+        "examples": [
+          "nexo generate component Button",
+          "nexo generate hook useAuth",
+          "nexo g feature Authentication"
+        ]
+      },
+      {
+        "command": "nexo wizard",
+        "description": "Guided project creation for beginners",
+        "flags": [],
+        "examples": [
+          "nexo wizard"
+        ]
+      },
+      {
+        "command": "nexo doctor",
+        "description": "Check project health and dependencies",
+        "flags": [],
+        "examples": [
+          "nexo doctor"
+        ]
+      }
+    ],
+    "interactivePrompts": [
+      {
+        "question": "Project name:",
+        "type": "text",
+        "options": [],
+        "default": "my-nexo-app",
+        "validation": "Alphanumeric, hyphens, underscores"
+      },
+      {
+        "question": "Select a framework:",
+        "type": "select",
+        "options": ["React", "Next.js (Coming Soon)"],
+        "default": "React",
+        "validation": null
+      },
+      {
+        "question": "Select a variant:",
+        "type": "select",
+        "options": ["TypeScript", "TypeScript + React Compiler", "TypeScript + SWC", "JavaScript", "JavaScript + React Compiler", "JavaScript + SWC"],
+        "default": "TypeScript",
+        "validation": null
+      }
+    ]
+  },
+  "templates": {
+    "templates": [
+      {
+        "name": "SaaS Preset",
+        "identifier": "saas",
+        "description": "Full-stack SaaS with auth and API",
+        "includes": {
+          "framework": "React",
+          "styling": ["Tailwind"],
+          "libraries": ["shadcn/ui", "React Query", "React Hook Form"],
+          "tools": ["ESLint", "Prettier"],
+          "features": ["Auth", "API Integration"]
+        },
+        "structure": "Feature-based",
+        "useCases": ["SaaS Application", "Complex Web App"],
+        "complexity": "advanced",
+        "fileCount": "N/A",
+        "setupTime": "< 1 min"
+      },
+      {
+        "name": "Dashboard Preset",
+        "identifier": "dashboard",
+        "description": "Admin dashboard with charts",
+        "includes": {
+          "framework": "React",
+          "styling": ["Tailwind"],
+          "libraries": ["Recharts", "shadcn/ui"],
+          "tools": [],
+          "features": []
+        },
+        "structure": "Feature-based",
+        "useCases": ["Admin Panels", "Analytics Dashboards"],
+        "complexity": "intermediate",
+        "fileCount": "N/A",
+        "setupTime": "< 1 min"
+      }
+    ],
+    "customTemplates": "Partially supported via presets system"
+  },
+  "workflow": {
+    "workflowSteps": [
+      {
+        "stepNumber": 1,
+        "userAction": "Run command",
+        "cliPrompt": "NEXO banner & Project Name prompt",
+        "inputType": "text",
+        "options": [],
+        "defaultValue": "my-nexo-app",
+        "validation": "Regex /^[a-z0-9-_]+$/i",
+        "output": "Project Name set",
+        "timing": "Immediate"
+      },
+      {
+        "stepNumber": 2,
+        "userAction": "Select Framework",
+        "cliPrompt": "Select a framework",
+        "inputType": "select",
+        "options": ["React", "Next.js"],
+        "defaultValue": "React",
+        "validation": null,
+        "output": "Framework set",
+        "timing": "Immediate"
+      },
+      {
+        "stepNumber": 3,
+        "userAction": "Select stack options",
+        "cliPrompt": "Series of prompts for Styling, UI, State, etc.",
+        "inputType": "select/multiselect",
+        "options": ["Tailwind", "Zustand", "React Router", "etc."],
+        "defaultValue": "Various",
+        "validation": null,
+        "output": "Configuration object built",
+        "timing": "~30s"
+      }
+    ],
+    "totalSteps": "Approx. 10 decisions",
+    "estimatedTime": "1-2 minutes",
+    "canSkipSteps": "Yes, via --preset or --dry-run"
+  },
+  "projectOutput": {
+    "projectStructure": "Standard Vite/React structure with src/ (components, hooks, pages, etc.), public/, and config files.",
+    "configFiles": [
+      {
+        "file": "vite.config.ts",
+        "purpose": "Build configuration",
+        "isEditable": true,
+        "commonChanges": "Plugins, aliases"
+      },
+      {
+        "file": "tailwind.config.js",
+        "purpose": "Styling configuration (if selected)",
+        "isEditable": true,
+        "commonChanges": "Theme extension, plugins"
+      }
+    ],
+    "scripts": {
+      "dev": "npm run dev",
+      "build": "npm run build",
+      "preview": "npm run preview",
+      "test": "npm run test",
+      "lint": "npm run lint"
+    },
+    "postInstallSteps": [
+      "cd <project-name>",
+      "npm install",
+      "npm run dev"
+    ]
+  },
+  "compatibility": {
+    "operatingSystems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "nodeVersions": ">=18.0.0",
+    "browserSupport": "Process.version dependent (Modern Browsers)",
+    "cicd": {
+      "github": "Yes (via --cicd flag)",
+      "gitlab": "Manual setup",
+      "jenkins": "Manual setup",
+      "vercel": "Supported (Vite preset)",
+      "netlify": "Supported (Vite preset)"
+    },
+    "limitations": [
+      "Next.js support is currently placeholder/coming soon."
+    ]
+  },
+  "comparison": {
+    "competitors": [
+      {
+        "name": "create-vite",
+        "similarities": ["Fast scaffolding", "Vite-based"],
+        "differences": ["NEXO offers full stack orchestration (UI, State, Router) vs basic template", "NEXO has interactive CLI wizard"],
+        "advantages": ["More comprehensive initial setup", "Opinionated but flexible stack choices"],
+        "disadvantages": ["Larger initial footprint than bare-bones vite"]
+      },
+      {
+        "name": "create-next-app",
+        "similarities": ["Interactive CLI"],
+        "differences": ["NEXO focuses on React+Vite primarily (for now)", "NEXO allows mix-and-match of libraries (Zustand, Redux, etc.)"],
+        "advantages": ["Wider choice of state/UI libraries out of the box"],
+        "disadvantages": ["No native Next.js support yet"]
+      }
+    ]
+  },
+  "stats": {
+    "githubStats": {
+      "stars": "N/A",
+      "forks": "N/A",
+      "openIssues": "N/A",
+      "contributors": "N/A",
+      "lastCommit": "2026-01-19"
+    },
+    "npmStats": {
+      "downloads": {
+        "weekly": "N/A",
+        "monthly": "N/A",
+        "total": "N/A"
+      },
+      "version": "1.1.4",
+      "publishDate": "2026-01-19"
+    },
+    "performance": {
+      "scaffoldTime": "~2s (file writing)",
+      "buildTime": "~0.30s (CLI compilation)",
+      "devServerStartup": "Instant",
+      "bundleSize": "~118KB"
+    }
+  },
+  "support": {
+    "documentation": {
+      "hasOfficialDocs": true,
+      "docsUrl": "https://nexo-site-ten.vercel.app/",
+      "quality": "good",
+      "languages": [
+        "English"
+      ]
+    },
+    "community": {
+      "discord": "N/A",
+      "slack": "N/A",
+      "twitter": "N/A",
+      "reddit": "N/A",
+      "stackoverflow": "N/A"
+    },
+    "support": {
+      "issueTracking": "GitHub Issues",
+      "responseTime": "N/A",
+      "activelyMaintained": true,
+      "lastUpdate": "2026-01-19"
+    }
+  },
+  "documentation": {
+    "examples": [
+      {
+        "title": "Create React App with Tailwind",
+        "description": "Scaffolds a React project using TypeScript and Tailwind CSS.",
+        "code": "nexo create my-app",
+        "liveDemo": "N/A",
+        "useCase": "Standard SPA development"
+      },
+      {
+        "title": "Generate Component",
+        "description": "Creates a new React component with optional tests and styles.",
+        "code": "nexo generate component Button --with-tests",
+        "liveDemo": "N/A",
+        "useCase": "Rapid feature development"
+      }
+    ],
+    "tutorials": [
+      "Guided Wizard (`nexo wizard`)"
+    ],
+    "videoContent": []
+  },
+  "commonErrors": {
+    "errors": [
+      {
+        "errorCode": "ERR_MODULE_NOT_FOUND",
+        "message": "Cannot find module ...",
+        "cause": "Lazy loading configurator file missing in dist folder.",
+        "solution": "Run `npm run build` to regenerate valid dist structure.",
+        "preventionTips": "Ensure build script uses correct recursive file finding logic."
+      },
+      {
+        "errorCode": "DIR_NOT_EMPTY",
+        "message": "Folder is not empty",
+        "cause": "Trying to scaffold in a directory with existing files.",
+        "solution": "Choose 'Overwrite' or 'Continue' if prompt appears, or use a new directory.",
+        "preventionTips": "Use `nexo create <name>` to create a new folder."
+      }
+    ]
+  },
+  "roadmap": {
+    "upcomingFeatures": [
+      "Next.js Support (App Router templates)",
+      "Additional UI Presets",
+      "Monorepo Support"
+    ],
+    "deprecations": [],
+    "breakingChanges": []
+  }
+}

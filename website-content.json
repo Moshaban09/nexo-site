@@ -1,0 +1,483 @@
+{
+  "hero": {
+    "headlines": [
+      "Ship Modern React Apps in Seconds",
+      "The Ultimate CLI for Enterprise-Grade React Projects",
+      "Stop Configuring. Start Building with NEXO.",
+      "Production-Ready React Scaffolding for Pros",
+      "Next-Gen Frontend Orchestration is Here"
+    ],
+    "subheadlines": [
+      "Scaffold React 19, TypeScript, Tailwind, and shadcn/ui apps instantly.",
+      "An extensible, developer-first CLI for modern web development.",
+      "Zero config fatigue. Best practices built-in by default."
+    ],
+    "description": "NEXO is the extensible CLI that orchestrates your entire frontend stack. From React 19 to Tailwind and shadcn/ui, get a production-ready codebase in seconds so you can focus on shipping features.",
+    "cta": {
+      "primary": "Get Started",
+      "secondary": "View Templates",
+      "copyCommand": "npm create nexo@latest"
+    },
+    "stats": [
+      {
+        "label": "Setup Time",
+        "value": "< 2s"
+      },
+      {
+        "label": "Bundle Size",
+        "value": "118KB"
+      },
+      {
+        "label": "Version",
+        "value": "v1.1.4"
+      }
+    ]
+  },
+  "terminalDemo": {
+    "steps": [
+      {
+        "command": "npm create nexo@latest",
+        "input": "",
+        "prompts": [],
+        "output": "Need to install the following packages:\n  create-nexo@1.1.4\nOk to proceed? (y) ",
+        "timing": 800
+      },
+      {
+        "command": "",
+        "input": "y",
+        "prompts": [],
+        "output": "\n   _  _  ____  _  _  ____ \n  ( \\( )( ___)( \\/ )/  _ \\\n   )  (  )__)  )  ( (  (_)\n  (_)\\_)(____)(_/\\_) \\____/\n\nWelcome to NEXO CLI v1.1.4\n",
+        "timing": 500
+      },
+      {
+        "command": "",
+        "input": "my-saas-app",
+        "prompts": [
+          {
+            "text": "Project Name",
+            "answer": "my-saas-app",
+            "icon": "?"
+          }
+        ],
+        "output": "",
+        "timing": 1200
+      },
+      {
+        "command": "",
+        "input": "",
+        "prompts": [
+          {
+            "text": "Select a framework",
+            "answer": "React",
+            "icon": "?"
+          },
+          {
+            "text": "Select a variant",
+            "answer": "TypeScript",
+            "icon": "?"
+          },
+          {
+            "text": "Select styling",
+            "answer": "Tailwind CSS",
+            "icon": "?"
+          },
+          {
+            "text": "Add shadcn/ui?",
+            "answer": "Yes",
+            "icon": "?"
+          }
+        ],
+        "output": "\nScaffolding project in /my-saas-app...\n",
+        "timing": 2500
+      },
+      {
+        "command": "",
+        "input": "",
+        "prompts": [],
+        "output": "✔ structure created\n✔ dependencies installed\n✔ git initialized\n",
+        "timing": 1500
+      }
+    ],
+    "finalMessage": "Done! 🚀 Now run:",
+    "nextCommands": [
+      "cd my-saas-app",
+      "npm run dev"
+    ],
+    "animations": {
+      "type": "typing",
+      "cursorChar": "█",
+      "speed": "fast"
+    },
+    "interactiveElements": {
+      "copyButton": true,
+      "replayButton": true
+    }
+  },
+  "features": [
+    {
+      "title": "Lightning Fast Scaffolding",
+      "description": "Generate full application structures in under 2 seconds. No more waiting for heavy initial downloads.",
+      "icon": "⚡",
+      "benefit": "Start coding immediately without the setup delay."
+    },
+    {
+      "title": "TypeScript First",
+      "description": "Built with TypeScript best practices out of the box. Choose between Standard, SWC, or React Compiler variants.",
+      "icon": "📘",
+      "benefit": "Type-safety from day one, reducing runtime errors."
+    },
+    {
+      "title": "Tailwind + shadcn/ui",
+      "description": "Native integration with Tailwind CSS and shadcn/ui for beautiful, accessible components.",
+      "icon": "🎨",
+      "benefit": "Standardized, modern UI layer ready for customization."
+    },
+    {
+      "title": "Smart Directory Handling",
+      "description": "Intelligently detects existing projects and offers to continue or overwrite, preventing data loss.",
+      "icon": "🧠",
+      "benefit": "Safely manage project creation in any folder."
+    },
+    {
+      "title": "Lazy Loading Architecture",
+      "description": "Configurators load on-demand, keeping the CLI leightweight and responsive.",
+      "icon": "🚀",
+      "benefit": "Zero lag user experience."
+    },
+    {
+      "title": "Dry Run Mode",
+      "description": "Preview your project structure before writing a single file to disk.",
+      "icon": "👁️",
+      "benefit": "Experiment safely without cluttering your filesystem."
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": "Install & Run",
+      "code": "npm create nexo@latest",
+      "description": "Launch the interactive wizard directly from your terminal.",
+      "output": "Welcome to NEXO CLI"
+    },
+    {
+      "step": "Configure Stack",
+      "code": "Selection: React > TS > Tailwind",
+      "description": "Choose your preferred tools from our curated list of modern libraries.",
+      "output": "✔ Configuration saved"
+    },
+    {
+      "step": "Scaffold",
+      "code": "nexo create my-app",
+      "description": "NEXO orchestrates the file creation, setting up routing, state, and UI seamlessly.",
+      "output": "Done in 1.4s"
+    },
+    {
+      "step": "Start Coding",
+      "code": "npm run dev",
+      "description": "Jump straight into a running development server with everything configured.",
+      "output": "Local: http://localhost:5173/"
+    }
+  ],
+  "templates": [
+    {
+      "name": "SaaS Starter",
+      "description": "Full-stack SaaS boilerplate with Auth, API integration, and React Query.",
+      "techStack": ["React", "TypeScript", "Tailwind", "shadcn/ui", "React Query"],
+      "useCase": "Building commercial SaaS products",
+      "command": "nexo create my-saas --preset=saas",
+      "screenshotAlt": "SaaS dashboard with authentication screens"
+    },
+    {
+      "name": "Admin Dashboard",
+      "description": "Data-heavy dashboard with charts, tables, and sidebar navigation.",
+      "techStack": ["React", "Recharts", "shadcn/ui", "Tailwind"],
+      "useCase": "Internal tools, Analytics platforms",
+      "command": "nexo create my-dash --preset=dashboard",
+      "screenshotAlt": "Analytics dashboard with graphs and data tables"
+    },
+    {
+      "name": "Minimal App",
+      "description": "Clean slate with just the essentials configured.",
+      "techStack": ["React", "Vite", "TypeScript"],
+      "useCase": "Learning, detailed custom implementations",
+      "command": "nexo create my-app --preset=minimal",
+      "screenshotAlt": "Clean Hello World screen"
+    }
+  ],
+  "installation": {
+    "commands": {
+      "npm": "npm create nexo@latest",
+      "yarn": "yarn create nexo",
+      "pnpm": "pnpm create nexo",
+      "global": "npm install -g create-nexo"
+    },
+    "quickStart": [
+      "nexo create my-app",
+      "cd my-app",
+      "npm run dev"
+    ],
+    "advancedUsage": "nexo create my-app --dry-run --preset=saas"
+  },
+  "commandReference": [
+    {
+      "command": "nexo create <name>",
+      "description": "Create a new project with the interactive wizard or flags.",
+      "flags": ["--dir", "--dry-run", "--preset", "--parallel"],
+      "example": "nexo create my-app -d ./projects",
+      "outputGroups": ["Success", "Error"]
+    },
+    {
+      "command": "nexo generate <type> <name>",
+      "description": "Scaffold components, hooks, or features into an existing project.",
+      "flags": ["--js", "--with-tests"],
+      "example": "nexo generate component Button --with-tests",
+      "outputGroups": ["File Created"]
+    },
+    {
+      "command": "nexo doctor",
+      "description": "Check current project health and dependencies.",
+      "flags": [],
+      "example": "nexo doctor",
+      "outputGroups": ["Health Report"]
+    }
+  ],
+  "comparison": {
+    "competitors": [
+      {
+        "name": "Create React App",
+        "speed": "Slow",
+        "features": "Basic",
+        "bundleSize": "Heavy",
+        "dx": "Outdated"
+      },
+      {
+        "name": "Vite",
+        "speed": "Fast",
+        "features": "Minimal",
+        "bundleSize": "Light",
+        "dx": "Good"
+      },
+      {
+        "name": "NEXO",
+        "speed": "Instant",
+        "features": "Full Suite",
+        "bundleSize": "Optimized",
+        "dx": "Excellent"
+      }
+    ],
+    "summary": "Nexo combines the speed of Vite with the comprehensive setup of a full framework, without the bloat."
+  },
+  "faq": [
+    {
+      "question": "Is Next.js supported?",
+      "answer": "Next.js support is currently in development and tagged as 'Coming Soon'. We are prioritizing App Router templates."
+    },
+    {
+      "question": "Can I use JavaScript instead of TypeScript?",
+      "answer": "Yes! NEXO fully supports JavaScript. You can use the `--js` flag or select JavaScript in the interactive wizard."
+    },
+    {
+      "question": "How do I add a custom library?",
+      "answer": "NEXO projects are standard React applications. You can `npm install` any library as you normally would. Our generated code is not proprietary."
+    },
+    {
+      "question": "What is 'Dry Run' mode?",
+      "answer": "Dry Run mode allows you to simulate the project creation process to see exactly what files would be created, without actually writing anything to your disk."
+    },
+    {
+      "question": "Where can I find the documentation?",
+      "answer": "Creating specific documentation is on our roadmap. For now, the comprehensive README and this website serve as the primary guides."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah Jenkins",
+      "role": "Senior Frontend Dev",
+      "company": "TechFlow",
+      "quote": "NEXO saved me hours on my last hackathon. The presets are spot-on.",
+      "rating": 5
+    },
+    {
+      "name": "Mike Chen",
+      "role": "Indie Hacker",
+      "company": "Self-Employed",
+      "quote": "Finally, a CLI that sets up shadcn/ui correctly without me having to fiddle with config files.",
+      "rating": 5
+    },
+    {
+      "name": "Alex Rivera",
+      "role": "Tech Lead",
+      "company": "StartUp Inc",
+      "quote": "The 'dry-run' feature is a lifesaver for checking templates before committing to them.",
+      "rating": 4
+    },
+    {
+      "name": "Emily Zhang",
+      "role": "Fullstack Developer",
+      "company": "Creative Agency",
+      "quote": "I use the component generator daily. It enforces our team's folder structure perfectly.",
+      "rating": 5
+    },
+    {
+      "name": "David Smith",
+      "role": "Junior Dev",
+      "company": "LearnCo",
+      "quote": "Super easy to use. I was up and running with a modern stack in minutes.",
+      "rating": 5
+    }
+  ],
+  "documentation": {
+    "sections": [
+      "Getting Started",
+      "Configuration",
+      "Templates",
+      "Customization",
+      "CLI Commands",
+      "Troubleshooting"
+    ]
+  },
+  "seo": {
+    "metaTitles": [
+      "NEXO CLI - The Ultimate React Scaffolding Tool",
+      "Scaffold Modern React Apps in Seconds | NEXO",
+      "NEXO: Production-Ready React Starter Kits",
+      "Fast, Extensible React CLI for Modern Developers",
+      "Create React Apps with Best Practices | NEXO CLI"
+    ],
+    "metaDescriptions": [
+      "Automate your React development with NEXO. Scaffold app with TypeScript, Tailwind, and shadcn/ui in seconds. The developer-first CLI tool.",
+      "Stop configuring and start coding. NEXO CLI offers the fastest way to build enterprise-grade React applications with modern defaults.",
+      "NEXO is the extensible CLI for scaffolding modern frontend projects. Features lazy loading, dry-run mode, and robust presets.",
+      "Get a production-ready React codebase instantly. NEXO handles the boilerplate so you can focus on building authorized, styled, and tested features.",
+      "The missing CLI for React. Zero-config setups for Next.js (soon) and Vite. Native shadcn/ui integration. Install create-nexo today."
+    ],
+    "keywords": [
+      "React CLI",
+      "React scaffolding",
+      "create-nexo",
+      "Vite template",
+      "React TypeScript starter",
+      "Tailwind CSS boilerplate",
+      "shadcn/ui generator",
+      "Frontend build tool",
+      "Next.js CLI",
+      "Web development tools",
+      "React best practices",
+      "React boilerplates",
+      "Automated coding",
+      "Developer productivity",
+      "NPM create script",
+      "Frontend automation",
+      "React 19",
+      "JavaScript tools",
+      "Open source CLI",
+      "Project generator"
+    ],
+    "ogTitle": "NEXO - Ship Modern React Apps Faster",
+    "ogDescription": "The extensible CLI for modern frontend orchestration. React, Tailwind, TS, and more.",
+    "twitterCard": "summary_large_image"
+  },
+  "cta": {
+    "midPage": "Ready to speed up your workflow?",
+    "footer": "Join thousands of developers building with NEXO.",
+    "sidebar": "Install Now",
+    "modal": "First time? Try our Wizard mode.",
+    "afterDemo": "Impressed? Try it on your machine."
+  },
+  "footer": {
+    "mainLinks": ["Home", "Features", "Templates", "Blog"],
+    "docsLinks": ["Getting Started", "API Reference", "Contributing"],
+    "socials": ["GitHub", "Twitter", "Discord"],
+    "newsletter": "Stay updated with new templates and features.",
+    "copyright": "© 2026 NEXO. Open Source MIT License."
+  },
+  "branding": {
+    "tone": "Professional, Empowering, Efficient",
+    "keyMessages": [
+      "Speed is a feature.",
+      "Your stack, your way.",
+      "Production-ready by default."
+    ],
+    "personality": ["Modern", "Reliable", "Fast"],
+    "taglines": [
+      "Build at the speed of thought.",
+      "The CLI that grows with you.",
+      "Scaffolding reimagined.",
+      "Your project, accelerated.",
+      "Frontend orchestration made simple."
+    ]
+  },
+  "useCases": [
+    {
+      "scenario": "Startups MVP",
+      "command": "nexo create mvp --preset=saas",
+      "help": "Instant setup of auth and billing pages allows founders to focus on business logic.",
+      "result": "Working MVP in days, not weeks."
+    },
+    {
+      "scenario": "Hackathons",
+      "command": "nexo create hack --parallel",
+      "help": "Parallel installation ensures the team starts coding immediately.",
+      "result": "Zero setup time, maximum hacking time."
+    },
+    {
+      "scenario": "Agency Work",
+      "command": "nexo generate component Hero",
+      "help": "Standardized components ensure consistency across multiple client projects.",
+      "result": "Scalable, maintainable codebases for clients."
+    },
+    {
+      "scenario": "Learning React",
+      "command": "nexo wizard",
+      "help": "The guided wizard explains choices, helping beginners understand the stack.",
+      "result": "Educational setup experience."
+    },
+    {
+      "scenario": "Design System Implementation",
+      "command": "nexo create ui-lib --preset=minimal",
+      "help": "A clean slate to implement complex design systems without opinionated bloat.",
+      "result": "Pure foundation for custom UI."
+    }
+  ],
+  "changelog": [
+    {
+      "version": "1.1.4",
+      "date": "2026-01-19",
+      "changes": [
+        "Added lazy loading for faster startup",
+        "Fixed git conflict resolution",
+        "Improved error logging"
+      ]
+    },
+    {
+      "version": "1.1.3",
+      "date": "2025-12-15",
+      "changes": [
+        "Initial Presets support",
+        "Dry-run mode implementation"
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "date": "2025-11-20",
+      "changes": [
+        "Major architecture refactor",
+        "React 19 support added"
+      ]
+    }
+  ],
+  "troubleshooting": {
+    "commonIssues": [
+      {
+        "error": "ERR_MODULE_NOT_FOUND",
+        "message": "Files missing in dist",
+        "solution": "Run `npm run build` to regenerate the CLI assets."
+      },
+      {
+        "error": "DIR_NOT_EMPTY",
+        "message": "Target directory has files",
+        "solution": "Use a new directory name or clear the current one."
+      }
+    ],
+    "debugCommand": "nexo doctor"
+  }
+}

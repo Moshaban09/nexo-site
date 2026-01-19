@@ -27,3 +27,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+"CLI_REPORT.json" 
+"prompt.json" 
+"website-content.json" 

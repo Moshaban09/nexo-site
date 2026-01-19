@@ -1,0 +1,222 @@
+أنت مساعد متخصص في تحليل مشاريع البرمجيات وإنشاء محتوى المواقع. قم بتحليل أداة CLI التالية وأنشئ محتوى شامل لموقع ويب احترافي.
+
+# معلومات الأداة:
+- الاسم: create-nexo
+- النوع: CLI scaffolding tool
+- الوظيفة الأساسية: إنشاء مشاريع React مع best practices
+- التقنيات: Vite, React 19, TypeScript, Tailwind CSS, shadcn/ui
+
+# المطلوب: استخراج وإنشاء المحتوى التالي بتنسيق JSON منظم:
+
+## 1. Hero Section (القسم الرئيسي)
+- عنوان رئيسي جذاب (Headline) - 5 خيارات مختلفة
+- عنوان فرعي (Subheadline) - 3 خيارات
+- وصف قصير (120-150 حرف)
+- Call-to-Action buttons (نصوص أزرار) - primary و secondary
+- Stats/Numbers للعرض (مثل: عدد التنزيلات، سرعة الإعداد، إلخ)
+
+## 2. Interactive Terminal Demo (عرض Terminal تفاعلي)
+محتوى لعرض Terminal مباشر في Hero Section:
+- خطوات العرض التفاعلي (كل خطوة تظهر تباعاً)
+- أوامر Terminal التي تُعرض
+- رسائل Output لكل أمر
+- رسائل Success مع emojis
+- توقيت ظهور كل خطوة (animation timing)
+- نصوص tooltip للشرح السريع
+
+### مثال للمحتوى المطلوب:
+```json
+{
+  "terminalDemo": {
+    "steps": [
+      {
+        "command": "npm create nexo@latest",
+        "input": "my-awesome-app",
+        "prompts": [
+          { "text": "Project name", "answer": "my-awesome-app", "icon": "✓" },
+          { "text": "Select framework", "answer": "React (Vite)", "icon": "✓" }
+        ],
+        "output": "Scaffolding project...",
+        "timing": 1000
+      }
+    ],
+    "finalMessage": "Done in 2.3s! Now run:",
+    "nextCommands": ["cd my-awesome-app", "npm install", "npm run dev"]
+  }
+}
+```
+
+## 3. Features Section (المميزات)
+لكل ميزة:
+- عنوان الميزة
+- وصف تفصيلي (2-3 جمل)
+- أيقونة/emoji مناسب
+- فائدة رئيسية (benefit)
+
+المميزات المطلوبة:
+- سرعة الإعداد
+- TypeScript out of the box
+- Tailwind CSS integration
+- shadcn/ui components
+- Multiple templates
+- Developer experience
+- Production-ready
+- Modern tooling
+
+## 4. How It Works (كيفية العمل)
+خطوات الاستخدام:
+- خطوة بخطوة (3-5 خطوات)
+- كود example لكل خطوة
+- شرح مبسط لكل خطوة
+- Terminal output متوقع لكل خطوة
+
+## 5. Templates Section (القوالب المتاحة)
+لكل قالب:
+- اسم القالب
+- وصف
+- التقنيات المستخدمة
+- Use cases مناسبة
+- أمر Terminal للإنشاء
+- Screenshot description
+
+## 6. Installation & Quick Start
+- أوامر التثبيت
+- أمثلة الاستخدام
+- خيارات CLI المتاحة
+- أمثلة متقدمة
+- Terminal commands مع شرح
+- Expected output لكل أمر
+
+## 7. Terminal Command Reference
+جدول شامل لجميع الأوامر:
+- الأمر
+- الوصف
+- الخيارات المتاحة (flags)
+- أمثلة الاستخدام
+- Expected output
+- Error messages محتملة
+
+## 8. Comparison Section (المقارنة)
+مقارنة مع:
+- create-react-app
+- create-vite
+- create-next-app
+جدول يوضح:
+- السرعة
+- المميزات
+- حجم Bundle
+- Developer Experience
+- Community support
+
+## 9. FAQ Section
+10-15 سؤال شائع مع إجابات شاملة حول:
+- التثبيت والاستخدام
+- المشاكل الشائعة
+- التخصيص
+- الدعم والتحديثات
+- الفروقات عن أدوات أخرى
+- أخطاء Terminal الشائعة وحلولها
+
+## 10. Testimonials (شهادات - اختياري)
+- 5 شهادات افتراضية واقعية من مطورين
+- تتضمن: الاسم، الدور، الشركة، الشهادة، التقييم
+
+## 11. Documentation Outline
+هيكل صفحات الوثائق:
+- Getting Started
+- Configuration
+- Templates
+- Customization
+- CLI Commands Reference
+- Troubleshooting
+- Migration Guide
+- API Reference
+
+## 12. SEO Content
+- Meta title (5 خيارات)
+- Meta description (5 خيارات)
+- Keywords (20 keyword على الأقل)
+- Open Graph texts
+- Twitter Card texts
+
+## 13. Call-to-Action Sections
+نصوص لـ CTA في مواضع مختلفة:
+- منتصف الصفحة
+- نهاية الصفحة
+- Sidebar
+- Modal/Popup
+- بعد Terminal Demo
+
+## 14. Footer Content
+- روابط أساسية
+- روابط Documentation
+- Social media links
+- Newsletter signup text
+- Copyright text
+
+## 15. Brand Voice & Messaging
+- Tone of voice (professional, friendly, technical)
+- Key messages (3-5 رسائل رئيسية)
+- Brand personality keywords
+- Taglines (5 خيارات)
+
+## 16. Use Cases & Examples
+5 use cases واقعية:
+- السيناريو
+- أوامر Terminal المستخدمة
+- كيف تساعد الأداة
+- النتيجة المتوقعة
+
+## 17. Changelog/Updates Section
+- نموذج لآخر 3 تحديثات
+- تنسيق Changelog
+- نص "What's New"
+
+## 18. Error Handling & Troubleshooting
+- أخطاء Terminal الشائعة
+- رسائل الخطأ
+- الحلول المقترحة
+- أوامر debugging
+
+---
+
+# تنسيق الإخراج:
+أخرج كل المحتوى بتنسيق JSON منظم وسهل الاستخدام مع هذا الهيكل:
+
+```json
+{
+  "hero": {...},
+  "terminalDemo": {
+    "steps": [...],
+    "animations": {...},
+    "interactiveElements": {...}
+  },
+  "features": [...],
+  "howItWorks": [...],
+  "templates": [...],
+  "installation": {...},
+  "commandReference": [...],
+  "comparison": {...},
+  "faq": [...],
+  "testimonials": [...],
+  "documentation": {...},
+  "seo": {...},
+  "cta": {...},
+  "footer": {...},
+  "branding": {...},
+  "useCases": [...],
+  "changelog": [...],
+  "troubleshooting": {...}
+}
+```
+
+# ملاحظات مهمة:
+- استخدم اللغة الإنجليزية للمحتوى الأساسي
+- كن محدداً وواقعياً في الأرقام والإحصائيات
+- ركز على benefits وليس فقط features
+- اجعل المحتوى SEO-friendly
+- استخدم لغة تقنية لكن واضحة
+- أضف أمثلة أكواد حقيقية حيثما أمكن
+- اجعل محتوى Terminal واقعياً ومطابقاً للاستخدام الفعلي
+- أضف emojis وألوان لرسائل Terminal (success ✓, error ✗, warning ⚠)
+- حدد timing مناسب للـ animations في Terminal Demo

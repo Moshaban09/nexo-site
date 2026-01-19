@@ -33,6 +33,22 @@ body {
   color: white;
   font-family: var(--font-sans);
   overflow-x: hidden;
+
+  /*
+    Premium Dark Gradient Background
+    Combines a deep base with subtle blue/purple mesh-like glow AND a grid pattern
+  */
+  background-image:
+    /* Subtle but visible grid pattern */
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    /* Radiant glows */
+    radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.2), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.2), transparent 25%),
+    /* Base color - ensure it allows contrast */
+    linear-gradient(to bottom, #050505, #000000);
+  background-size: 50px 50px, 50px 50px, 100% 100%, 100% 100%, 100% 100%;
+  background-attachment: fixed;
 }
 
 /* Custom Utilities for Neon Effects */

@@ -1,135 +1,320 @@
 import { motion } from 'framer-motion';
-import { Box, Command, Database, Globe, Layers, LockKeyhole, Palette, Signpost, Zap } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import {
+  ArrowRightLeft,
+  Atom,
+  Bot,
+  Box,
+  Component,
+  Database,
+  Eye,
+  FileCode,
+  FileJson,
+  FolderTree,
+  FormInput,
+  GitBranch,
+  Globe,
+  Globe2, Key, Layers,
+  Layout,
+  Lock,
+  Map,
+  Network,
+  Package,
+  Palette,
+  Route,
+  ShieldCheck,
+  Sparkles,
+  Terminal,
+  Wind,
+  Zap
+} from 'lucide-react';
 import { fadeIn } from '../../lib/animations';
 
-import type { LucideIcon } from 'lucide-react';
-
-interface FeatureCardProps {
-  title: string;
-  description: string;
+interface SubItem {
+  name: string;
   icon: LucideIcon;
-  className?: string;
-  delay?: number;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon: Icon, className = "", delay = 0 }) => (
-  <motion.div
-    variants={fadeIn}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ delay, duration: 0.5 }}
-    className={`p-6 rounded-2xl bg-[#121212] border border-white/5 hover:border-blue-500/30 transition-all duration-300 hover:bg-[#1a1a1a] group ${className}`}
-  >
-    <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
-      <Icon className="w-6 h-6 text-blue-400 group-hover:text-blue-300 transition-colors" />
-    </div>
-    <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-    <p className="text-neutral-400 text-sm leading-relaxed">{description}</p>
-  </motion.div>
-);
+interface FeatureItem {
+  title: string;
+  description?: string;
+  items?: SubItem[];
+  icon: LucideIcon;
+  badge?: string;
+  color: string;
+  bg: string;
+  border: string;
+}
+
+const features: FeatureItem[] = [
+  // Core / Dev Exp (Blue)
+  {
+    title: "React 19",
+    description: "The latest React features including Actions and unified Hooks",
+    icon: Atom,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20"
+  },
+  {
+    title: "Interactive CLI",
+    description: "Guided project setup with smart defaults",
+    icon: Terminal,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20"
+  },
+  {
+    title: "TypeScript First",
+    description: "Full type safety out of the box",
+    icon: FileCode,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20"
+  },
+  {
+    title: "Vite Powered",
+    description: "Lightning-fast development and builds",
+    icon: Zap,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20"
+  },
+  {
+    title: "Next.js Support",
+    description: "Coming Soon!",
+    icon: Sparkles,
+    badge: "Soon",
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20"
+  },
+
+  // UI & Design (Purple)
+  {
+    title: "Modern Styling",
+    items: [
+        { name: "Tailwind v4", icon: Wind },
+        { name: "CSS Modules", icon: FileCode },
+        { name: "Sass", icon: FileJson }
+    ],
+    icon: Palette,
+    color: "text-purple-400",
+    bg: "bg-purple-500/10",
+    border: "border-purple-500/20"
+  },
+  {
+    title: "UI Libraries",
+    items: [
+        { name: "shadcn/ui", icon: Component },
+        { name: "Radix", icon: Layers },
+        { name: "Mantine", icon: Box },
+        { name: "HeroUI", icon: Layout }
+    ],
+    icon: Layout,
+    color: "text-purple-400",
+    bg: "bg-purple-500/10",
+    border: "border-purple-500/20"
+  },
+
+  // State & Forms (Amber)
+  {
+    title: "Forms",
+    items: [
+        { name: "RHF", icon: FormInput },
+        { name: "Zod", icon: ShieldCheck },
+        { name: "Formik", icon: FileCode }
+    ],
+    icon: FormInput,
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
+    border: "border-amber-500/20"
+  },
+  {
+    title: "State Management",
+    items: [
+        { name: "Zustand", icon: Database },
+        { name: "Redux", icon: Box },
+        { name: "Jotai", icon: Atom }
+    ],
+    icon: Database,
+    color: "text-amber-400",
+    bg: "bg-amber-500/10",
+    border: "border-amber-500/20"
+  },
+
+  // Data & Routing (Emerald)
+  {
+    title: "Routing",
+    items: [
+        { name: "React Router", icon: Route },
+        { name: "TanStack", icon: Map }
+    ],
+    icon: Map,
+    color: "text-emerald-400",
+    bg: "bg-emerald-500/10",
+    border: "border-emerald-500/20"
+  },
+  {
+    title: "Data Fetching",
+    items: [
+        { name: "React Query", icon: Network },
+        { name: "Axios", icon: ArrowRightLeft }
+    ],
+    icon: ArrowRightLeft,
+    color: "text-emerald-400",
+    bg: "bg-emerald-500/10",
+    border: "border-emerald-500/20"
+  },
+
+  // Infra & Global (Rose)
+  {
+    title: "i18n",
+    items: [
+        { name: "i18next", icon: Globe },
+        { name: "Lingui", icon: Globe2 }
+    ],
+    icon: Globe,
+    color: "text-rose-400",
+    bg: "bg-rose-500/10",
+    border: "border-rose-500/20"
+  },
+  {
+    title: "Auth Templates",
+    items: [
+        { name: "JWT", icon: Key },
+        { name: "Auth.js", icon: Lock }
+    ],
+    icon: Lock,
+    color: "text-rose-400",
+    bg: "bg-rose-500/10",
+    border: "border-rose-500/20"
+  },
+  {
+    title: "CI/CD",
+    description: "GitHub Actions workflow included",
+    icon: GitBranch,
+    color: "text-rose-400",
+    bg: "bg-rose-500/10",
+    border: "border-rose-500/20"
+  },
+
+  // Architecture & Tools (Indigo/Cyber)
+  {
+    title: "Project Structures",
+    items: [
+        { name: "Feature-based", icon: FolderTree },
+        { name: "Atomic", icon: Atom }
+    ],
+    icon: FolderTree,
+    color: "text-indigo-400",
+    bg: "bg-indigo-500/10",
+    border: "border-indigo-500/20"
+  },
+  {
+    title: "AI Instructions",
+    description: "Auto-generate guides for Cursor, Windsurf, & Claude",
+    icon: Bot,
+    color: "text-indigo-400",
+    bg: "bg-indigo-500/10",
+    border: "border-indigo-500/20"
+  },
+  {
+    title: "Presets",
+    items: [
+        { name: "SaaS", icon: Package },
+        { name: "Dashboard", icon: Layout }
+    ],
+    icon: Package,
+    color: "text-cyan-400",
+    bg: "bg-cyan-500/10",
+    border: "border-cyan-500/20"
+  },
+  {
+    title: "Dry Run Mode",
+    description: "Preview changes before creating files",
+    icon: Eye,
+    color: "text-cyan-400",
+    bg: "bg-cyan-500/10",
+    border: "border-cyan-500/20"
+  }
+];
 
 export const Features = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
-        {/* Background blobs */}
-        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-blue-600/5 blur-[100px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-600/5 blur-[100px] rounded-full pointer-events-none" />
-
+    <section id="features" className="py-24 relative overflow-hidden bg-black/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Everything you need,<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-              Zero configuration.
-            </span>
-          </h2>
-          <p className="text-neutral-400 text-lg">
-            Stop wasting time on webpack configs. NEXO provides a battle-tested foundation for your next big idea.
-          </p>
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <motion.h2
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold mb-6"
+          >
+            Capabilities
+          </motion.h2>
+          <motion.p
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-neutral-400 text-lg"
+          >
+             A complete toolkit for modern web development.
+          </motion.p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[minmax(180px,auto)]">
-          {/* Large Card 1 */}
-          <FeatureCard
-            title="Lightning Fast"
-            description="Built on top of Vite and SWC. Experience sub-millisecond server starts and instant HMR updates. Your development flow has never been this smooth."
-            icon={Zap}
-            className="md:col-span-2 md:row-span-1"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {features.map((feature, idx) => (
+                <motion.div
+                    key={feature.title}
+                    variants={fadeIn}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="group relative p-6 rounded-2xl bg-[#111] border border-white/5 hover:border-transparent transition-all duration-300 hover:-translate-y-1"
+                >
+                    {/* Hover Gradient Border Effect */}
+                    <div className={`absolute inset-0 rounded-2xl border border-transparent group-hover:${feature.border} opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none`} />
 
-          {/* Card 2 */}
-          <FeatureCard
-            title="Clean Architecture"
-            description="Choose between Feature-Sliced Design, Atomic Design, or a simple feature-based structure."
-            icon={Layers}
-            className="md:col-span-1"
-             delay={0.1}
-          />
+                    {/* Glow Effect */}
+                    <div className={`absolute -inset-2 rounded-3xl ${feature.bg} blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none`} />
 
-           {/* Card 3 */}
-           <FeatureCard
-            title="Type Safe"
-            description="TypeScript strict mode enabled by default. Zod validation pre-configured."
-            icon={Box}
-            className="md:col-span-1"
-            delay={0.2}
-          />
+                    <div className="relative z-10">
+                        <div className="flex items-center justify-between mb-4">
+                            <div className={`p-2.5 rounded-lg ${feature.bg} ${feature.color} border ${feature.border} border-opacity-30`}>
+                                 <feature.icon size={22} />
+                            </div>
+                            {feature.badge && (
+                                <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${feature.bg} ${feature.color} border ${feature.border}`}>
+                                    {feature.badge}
+                                </span>
+                            )}
+                        </div>
 
-          {/* Large Card 4 */}
-          <FeatureCard
-            title="Interactive CLI"
-            description="A beautiful terminal interface guides you through every decision. Generate components, hooks, and pages with a single command."
-            icon={Command}
-            className="md:col-span-2"
-            delay={0.3}
-          />
+                        <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
 
-          {/* Card 5 */}
-          <FeatureCard
-            title="Modern Styling"
-            description="Tailwind CSS v4 is the default engine. Also supports CSS Modules and Sass."
-            icon={Palette}
-            className="md:col-span-1"
-            delay={0.4}
-          />
+                        {feature.description && (
+                            <p className="text-sm text-neutral-400 leading-relaxed group-hover:text-neutral-300 transition-colors">
+                                {feature.description}
+                            </p>
+                        )}
 
-          {/* Card 6 */}
-          <FeatureCard
-            title="State Management"
-            description="Pre-wired templates for Zustand, Redux Toolkit, or Jotai. Pick your poison."
-            icon={Database}
-            className="md:col-span-1"
-            delay={0.5}
-          />
-
-          {/* Card 7 - Routing */}
-          <FeatureCard
-            title="Flexible Routing"
-            description="Choose between React Router or TanStack Router. Type-safe navigation out of the box."
-            icon={Signpost}
-            className="md:col-span-1"
-            delay={0.6}
-          />
-
-          {/* Card 8 - i18n */}
-          <FeatureCard
-            title="i18n Ready"
-            description="Internationalization with i18next or Lingui. Go global from day one."
-            icon={Globe}
-            className="md:col-span-1"
-            delay={0.7}
-          />
-
-          {/* Card 9 - Auth */}
-          <FeatureCard
-            title="Auth Templates"
-            description="JWT authentication and Auth.js patterns pre-built for secure user management."
-            icon={LockKeyhole}
-            className="md:col-span-2"
-            delay={0.8}
-          />
+                        {feature.items && (
+                            <div className="flex flex-wrap gap-2 mt-3">
+                                {feature.items.map(item => (
+                                    <span key={item.name} className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-white/5 border border-white/5 text-[11px] font-medium text-neutral-400 group-hover:text-neutral-200 transition-colors cursor-default hover:${feature.border}`}>
+                                        <item.icon size={12} className={feature.color} />
+                                        {item.name}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </motion.div>
+            ))}
         </div>
       </div>
     </section>
