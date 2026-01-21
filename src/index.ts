@@ -20,7 +20,7 @@ export { FAQ } from "./components/sections/FAQ";
 export { Features } from "./components/sections/Features";
 export { Hero } from "./components/sections/Hero";
 export { HowItWorks } from "./components/sections/HowItWorks";
-export { ModernCTA } from "./components/sections/ModernCTA";
+export { StatsBanner } from "./components/sections/StatsBanner";
 export { Templates } from "./components/sections/Templates";
 export { Testimonials } from "./components/sections/Testimonials";
 

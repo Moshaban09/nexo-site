@@ -22,7 +22,7 @@ export const CodeBlock = ({ code, language = 'bash', className = '' }: CodeBlock
 
   return (
     <div className={`relative group rounded-lg overflow-hidden border border-white/10 bg-[#0a0a0a] ${className}`}>
-      <div className="absolute right-2 top-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="absolute right-2 top-2 z-10 opacity-50 group-hover:opacity-100 transition-opacity">
         <button
           onClick={handleCopy}
           className="p-2 rounded-md bg-white/10 hover:bg-white/20 text-neutral-400 hover:text-white transition-colors"

@@ -58,25 +58,31 @@ export const Footer = () => {
             <div className="flex space-x-4 mb-6">
               <a
                 href="https://github.com/Moshaban09/create-nexo"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-neutral-800 transition-all"
               >
                 <Github size={20} />
               </a>
               <a
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-neutral-800 transition-all"
               >
                 <Twitter size={20} />
               </a>
               <a
                 href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-neutral-800 transition-all"
               >
                 <MessageSquare size={20} />
               </a>
             </div>
             <p className="text-sm text-neutral-500">
-              Join our newsletter for updates.
+              Join the ecosystem and stay updated.
             </p>
           </div>
         </div>

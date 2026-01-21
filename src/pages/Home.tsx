@@ -5,8 +5,8 @@ import {
   Hero,
   HowItWorks,
   Layout,
-  ModernCTA,
-  Templates,
+  StatsBanner,
+  Templates
 } from "..";
 
 export const Home = () => {
@@ -18,7 +18,7 @@ export const Home = () => {
       <Templates />
       <Comparison />
       <FAQ />
-      <ModernCTA />
+      <StatsBanner />
     </Layout>
   );
 };
