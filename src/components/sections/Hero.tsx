@@ -33,7 +33,7 @@ export const Hero = () => {
             className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300 mb-6 backdrop-blur-sm shadow-blue-500/10 shadow-lg"
           >
             <span className="flex h-1.5 w-1.5 rounded-full bg-blue-400 mr-2 animate-pulse"></span>
-            v1.1.4 — Latest Release
+            v1.2.1 — Refined Release
           </motion.div>
 
           <motion.h1
@@ -50,7 +50,7 @@ export const Hero = () => {
             variants={fadeIn}
             className="text-lg md:text-xl text-neutral-400 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Scaffold React 19, TypeScript, Tailwind, and shadcn/ui apps instantly. The extensible CLI for modern frontend orchestration.
+            Scaffold React, Next.js, and modern web stacks instantly. The AI-Native CLI with first-class Arabic RTL support and security-first orchestration.
           </motion.p>
 
           <motion.div
@@ -89,14 +89,14 @@ export const Hero = () => {
               "✔ Project name ... my-awesome-app",
               "✔ Select framework › React (Vite)",
               "✔ Select variant › TypeScript + React Compiler ⭐",
-              "✔ Add Tailwind CSS v4? … Yes",
+              "✔ Select styling › Tailwind CSS v4",
               "✔ Select UI Library › shadcn/ui",
-              "✔ Add State Management? › Zustand",
-              "✔ Include CI/CD workflows? … Yes",
+              "✔ Add AI Context? … Yes (Arabic Optimization)",
+              "✔ Add Security Suite? … Yes (SBOM)",
               "",
               "⚡ Scaffolding project in ./my-awesome-app...",
-              "✨ Done in 2.3s! Now run:",
-              "  cd my-awesome-app && npm install && npm run dev"
+              "✨ Done in 1.4s! Now run:",
+              "  cd my-awesome-app && npm run dev"
             ]}
           />
 

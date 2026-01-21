@@ -22,6 +22,7 @@ import {
   Package,
   Palette,
   Route,
+  Settings,
   ShieldCheck,
   Sparkles,
   Terminal,
@@ -60,6 +61,14 @@ const features: FeatureItem[] = [
     title: "Interactive CLI",
     description: "Guided project setup with smart defaults",
     icon: Terminal,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20"
+  },
+  {
+    title: "Disk Cache",
+    description: "Instant startup (<50ms) via persistent metadata caching",
+    icon: Zap,
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20"
@@ -169,11 +178,13 @@ const features: FeatureItem[] = [
 
   // Infra & Global (Rose)
   {
-    title: "i18n",
+    title: "i18n & Localization",
     items: [
         { name: "i18next", icon: Globe },
-        { name: "Lingui", icon: Globe2 }
+        { name: "Lingui", icon: Globe2 },
+        { name: "Arabic RTL", icon: Globe }
     ],
+    description: "Specialized context for RTL and Arabic fonts",
     icon: Globe,
     color: "text-rose-400",
     bg: "bg-rose-500/10",
@@ -204,9 +215,35 @@ const features: FeatureItem[] = [
     title: "Project Structures",
     items: [
         { name: "Feature-based", icon: FolderTree },
-        { name: "Atomic", icon: Atom }
+        { name: "Atomic", icon: Atom },
+        { name: "FSD", icon: Layers }
     ],
     icon: FolderTree,
+    color: "text-indigo-400",
+    bg: "bg-indigo-500/10",
+    border: "border-indigo-500/20"
+  },
+  {
+    title: "Security & QA",
+    items: [
+        { name: "SBOM", icon: ShieldCheck },
+        { name: "Zero-Trust", icon: Lock },
+        { name: "Doctor", icon: Bot }
+    ],
+    description: "Built-in security audits and system health checks",
+    icon: ShieldCheck,
+    color: "text-indigo-400",
+    bg: "bg-indigo-500/10",
+    border: "border-indigo-500/20"
+  },
+  {
+    title: "Visual Testing",
+    items: [
+        { name: "Storybook", icon: Eye },
+        { name: "Ladle", icon: Layout },
+        { name: "Auto-Story", icon: Sparkles }
+    ],
+    icon: Eye,
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
     border: "border-indigo-500/20"
@@ -234,6 +271,18 @@ const features: FeatureItem[] = [
     title: "Dry Run Mode",
     description: "Preview changes before creating files",
     icon: Eye,
+    color: "text-cyan-400",
+    bg: "bg-cyan-500/10",
+    border: "border-cyan-500/20"
+  },
+  {
+    title: "Maintenance Suite",
+    items: [
+        { name: "Undo", icon: ArrowRightLeft },
+        { name: "Migrate", icon: GitBranch },
+        { name: "Update", icon: Zap }
+    ],
+    icon: Settings,
     color: "text-cyan-400",
     bg: "bg-cyan-500/10",
     border: "border-cyan-500/20"

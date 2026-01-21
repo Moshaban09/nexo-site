@@ -1,4 +1,4 @@
-import { Terminal, Wrench, Zap } from 'lucide-react';
+import { History, RefreshCw, ShieldCheck, Terminal, Webhook, Wrench, Zap } from 'lucide-react';
 import { DocsLayout } from '../../components/layout/DocsLayout';
 import { Layout } from '../../components/layout/Layout';
 
@@ -36,11 +36,53 @@ const commands = [
         ]
     },
     {
+        cmd: "nexo health",
+        args: "",
+        icon: ShieldCheck,
+        desc: "Audit project security, lockfiles, and bundle health status.",
+        examples: ["nexo health"],
+        options: []
+    },
+    {
         cmd: "nexo doctor",
         args: "",
         icon: Wrench,
-        desc: "inspects your environment for issues (node versions, missing deps).",
+        desc: "Inspects your environment for issues (node versions, missing deps).",
         examples: ["nexo doctor"],
+        options: []
+    },
+    {
+        cmd: "nexo generate api",
+        args: "<url>",
+        icon: Webhook,
+        desc: "Automatic client generation from Swagger/OpenAPI URLs.",
+        examples: [
+            "nexo generate api https://api.example.com/swagger.json"
+        ],
+        options: []
+    },
+    {
+        cmd: "nexo migrate",
+        args: "",
+        icon: Zap,
+        desc: "Turn any existing project into a Nexo-powered project with smart detection.",
+        examples: ["nexo migrate"],
+        options: []
+    },
+    {
+        cmd: "nexo undo",
+        args: "",
+        icon: History,
+        desc: "Roll back the last generation command and clean up files.",
+        examples: ["nexo undo"],
+        options: []
+    },
+    {
+        cmd: "nexo update",
+        args: "",
+        icon: RefreshCw,
+        desc: "Self-update Nexo CLI to the latest version.",
+        examples: ["nexo update"],
         options: []
     }
 ];

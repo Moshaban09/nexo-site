@@ -1,5 +1,8 @@
 import {
   ArrowRight, Blocks,
+  BrainCircuit,
+  Globe,
+  RefreshCw,
   Rocket,
   Settings2,
   ShieldCheck,
@@ -91,7 +94,43 @@ export const DocsIntro = () => {
                             </p>
                         </div>
                     </li>
+                    <li className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 items-start cursor-default hover:bg-white/10 transition-colors">
+                        <div className="mt-1 text-purple-400">
+                            <BrainCircuit size={20} />
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-white">AI-Native Context</h4>
+                            <p className="text-sm text-neutral-400 mt-1">
+                                Automatically generates specialized context files and rules for Cursor/AI IDEs, making your development 10x smarter.
+                            </p>
+                        </div>
+                    </li>
+                    <li className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/5 items-start cursor-default hover:bg-white/10 transition-colors">
+                        <div className="mt-1 text-orange-400">
+                            <Globe size={20} />
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-white">Arabic & RTL Support</h4>
+                            <p className="text-sm text-neutral-400 mt-1">
+                                First-class support for RTL layouts and Arabic context, ensuring your apps are ready for the global web from day one.
+                            </p>
+                        </div>
+                    </li>
                 </ul>
+            </section>
+
+            {/* Migration Section */}
+            <section className="p-6 rounded-2xl bg-blue-500/5 border border-blue-500/10">
+                <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <RefreshCw className="text-blue-400" size={20} />
+                    Already have a project?
+                </h2>
+                <p className="text-neutral-400 mb-4">
+                    NEXO isn't just for new projects. Use the <code>migrate</code> command to intelligently inject NEXO's logic and tools into any existing React project.
+                </p>
+                <div className="bg-black/50 rounded-lg p-4 font-mono text-sm text-blue-300 border border-white/5">
+                    $ nexo migrate
+                </div>
             </section>
 
             {/* Next Steps CTA */}

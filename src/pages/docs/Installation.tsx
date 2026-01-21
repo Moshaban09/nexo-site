@@ -77,7 +77,7 @@ export const DocsInstallation = () => {
                             </p>
                         </div>
                     </div>
-                    <CodeBlock language="bash" code="nexo create my-app --template=saas --dry-run" />
+                    <CodeBlock language="bash" code="nexo create my-app --preset=saas --dry-run" />
                  </div>
             </div>
 

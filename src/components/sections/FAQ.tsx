@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "Can I add NEXO to an existing project?",
-    answer: "The primary `create` command is for new projects. However, we are working on `nexo add` interaction to inject components and features into existing NEXO-generated projects."
+    answer: "Yes! Originally designed for new projects, NEXO v1.2.0 introduces the `nexo migrate` command. This intelligently detects your current tech stack and layers in NEXO's power tools, folder structures, and AI context without breaking your existing features."
   }
 ];
 
