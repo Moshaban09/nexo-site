@@ -1,4 +1,4 @@
-import { History, RefreshCw, ShieldCheck, Terminal, Webhook, Wrench, Zap } from 'lucide-react';
+import { RefreshCw, ShieldCheck, Terminal } from 'lucide-react';
 import { DocsLayout } from '../../components/layout/DocsLayout';
 import { Layout } from '../../components/layout/Layout';
 
@@ -21,69 +21,40 @@ const commands = [
         ]
     },
     {
-        cmd: "nexo generate",
-        args: "<type> <name>",
-        icon: Zap,
-        desc: "Scaffolds specific resources into your existing project.",
+        cmd: "nexo check",
+        args: "[options]",
+        icon: ShieldCheck,
+        desc: "Unified command for system and project health audits. Replaces doctor and health.",
         examples: [
-            "nexo generate component Button",
-            "nexo generate hook useAuth",
-            "nexo generate page Settings"
+             "nexo check",
+             "nexo check --system",
+             "nexo check --project"
         ],
         options: [
-            { flag: "--flat", desc: "Create file without a containing folder" },
-            { flag: "--dry-run", desc: "Preview generated code" }
+            { flag: "--system", desc: "Check system environment only (Node, npm, Git)" },
+            { flag: "--project", desc: "Check project health only (security, lockfiles, bundle)" }
         ]
     },
     {
-        cmd: "nexo health",
+        cmd: "Global Flags",
         args: "",
-        icon: ShieldCheck,
-        desc: "Audit project security, lockfiles, and bundle health status.",
-        examples: ["nexo health"],
-        options: []
-    },
-    {
-        cmd: "nexo doctor",
-        args: "",
-        icon: Wrench,
-        desc: "Inspects your environment for issues (node versions, missing deps).",
-        examples: ["nexo doctor"],
-        options: []
-    },
-    {
-        cmd: "nexo generate api",
-        args: "<url>",
-        icon: Webhook,
-        desc: "Automatic client generation from Swagger/OpenAPI URLs.",
-        examples: [
-            "nexo generate api https://api.example.com/swagger.json"
-        ],
-        options: []
-    },
-    {
-        cmd: "nexo migrate",
-        args: "",
-        icon: Zap,
-        desc: "Turn any existing project into a Nexo-powered project with smart detection.",
-        examples: ["nexo migrate"],
-        options: []
-    },
-    {
-        cmd: "nexo undo",
-        args: "",
-        icon: History,
-        desc: "Roll back the last generation command and clean up files.",
-        examples: ["nexo undo"],
-        options: []
+        icon: Terminal,
+        desc: "Flags available for all commands to enhance control and debugging.",
+        examples: ["nexo <command> --verbose", "nexo <command> --dry-run"],
+        options: [
+            { flag: "--verbose", desc: "Enable detailed logging for debugging" },
+            { flag: "--dry-run", desc: "Preview all operations without making changes" }
+        ]
     },
     {
         cmd: "nexo update",
         args: "",
         icon: RefreshCw,
-        desc: "Self-update Nexo CLI to the latest version.",
-        examples: ["nexo update"],
-        options: []
+        desc: "Self-update Nexo CLI to the latest version with dry-run support.",
+        examples: ["nexo update", "nexo update --dry-run"],
+        options: [
+            { flag: "--dry-run", desc: "Preview updates before applying" }
+        ]
     }
 ];
 

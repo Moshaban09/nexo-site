@@ -1,33 +1,48 @@
 import { motion } from 'framer-motion';
-import type { LucideIcon } from 'lucide-react';
 import {
-  ArrowRightLeft,
-  Atom,
-  Bot,
-  Box,
-  Component,
-  Database,
-  Eye,
-  FileCode,
-  FileJson,
-  FolderTree,
-  FormInput,
-  GitBranch,
-  Globe,
-  Globe2, Key, Layers,
-  Layout,
-  Lock,
-  Map,
-  Network,
-  Package,
-  Palette,
-  Route,
-  Settings,
-  ShieldCheck,
-  Sparkles,
-  Terminal,
-  Wind,
-  Zap
+    Activity,
+    ArrowRightLeft,
+    Atom,
+    Bot,
+    Box,
+    BrainCircuit,
+    ClipboardCheck,
+    Component,
+    Database,
+    FileCode,
+    FileJson,
+    FileType2,
+    Flag,
+    FolderTree,
+    FormInput,
+    Hammer,
+    HardDrive,
+    Languages,
+    Layers,
+    Layout,
+    LayoutDashboard,
+    Lock,
+    Map,
+    Microscope,
+    Network,
+    Paintbrush,
+    Palette,
+    RefreshCw,
+    Rocket,
+    Route,
+    ScanEye,
+    Server,
+    ShieldAlert,
+    ShieldCheck,
+    Sparkles,
+    Stethoscope,
+    Terminal as TerminalIcon,
+    Wand2,
+    Waypoints,
+    Wind,
+    Workflow,
+    Zap,
+    type LucideIcon
 } from 'lucide-react';
 import { fadeIn } from '../../lib/animations';
 
@@ -60,7 +75,7 @@ const features: FeatureItem[] = [
   {
     title: "Interactive CLI",
     description: "Guided project setup with smart defaults",
-    icon: Terminal,
+    icon: TerminalIcon,
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20"
@@ -68,7 +83,7 @@ const features: FeatureItem[] = [
   {
     title: "Disk Cache",
     description: "Instant startup (<50ms) via persistent metadata caching",
-    icon: Zap,
+    icon: HardDrive,
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20"
@@ -76,24 +91,32 @@ const features: FeatureItem[] = [
   {
     title: "TypeScript First",
     description: "Full type safety out of the box",
-    icon: FileCode,
+    icon: FileType2,
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20"
   },
   {
-    title: "Vite Powered",
-    description: "Lightning-fast development and builds",
+    title: "Zero-Latency I/O",
+    description: "Memory-resident package management for instant command execution",
     icon: Zap,
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20"
   },
   {
-    title: "Next.js Support",
-    description: "Coming Soon!",
-    icon: Sparkles,
-    badge: "Soon",
+    title: "Dry Run Mode",
+    description: "Preview every structural change before it touches your disk",
+    icon: ScanEye,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20"
+  },
+  {
+    title: "Zero-Dependency Binary",
+    description: "Entire CLI bundled into a single ~226KB file for instant installation",
+    icon: Box,
+    badge: "NEW",
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20"
@@ -117,10 +140,9 @@ const features: FeatureItem[] = [
     items: [
         { name: "shadcn/ui", icon: Component },
         { name: "Radix", icon: Layers },
-        { name: "Mantine", icon: Box },
         { name: "HeroUI", icon: Layout }
     ],
-    icon: Layout,
+    icon: Paintbrush,
     color: "text-purple-400",
     bg: "bg-purple-500/10",
     border: "border-purple-500/20"
@@ -134,7 +156,7 @@ const features: FeatureItem[] = [
         { name: "Zod", icon: ShieldCheck },
         { name: "Formik", icon: FileCode }
     ],
-    icon: FormInput,
+    icon: ClipboardCheck,
     color: "text-amber-400",
     bg: "bg-amber-500/10",
     border: "border-amber-500/20"
@@ -146,7 +168,7 @@ const features: FeatureItem[] = [
         { name: "Redux", icon: Box },
         { name: "Jotai", icon: Atom }
     ],
-    icon: Database,
+    icon: Activity,
     color: "text-amber-400",
     bg: "bg-amber-500/10",
     border: "border-amber-500/20"
@@ -159,7 +181,7 @@ const features: FeatureItem[] = [
         { name: "React Router", icon: Route },
         { name: "TanStack", icon: Map }
     ],
-    icon: Map,
+    icon: Waypoints,
     color: "text-emerald-400",
     bg: "bg-emerald-500/10",
     border: "border-emerald-500/20"
@@ -170,7 +192,7 @@ const features: FeatureItem[] = [
         { name: "React Query", icon: Network },
         { name: "Axios", icon: ArrowRightLeft }
     ],
-    icon: ArrowRightLeft,
+    icon: Server,
     color: "text-emerald-400",
     bg: "bg-emerald-500/10",
     border: "border-emerald-500/20"
@@ -178,33 +200,20 @@ const features: FeatureItem[] = [
 
   // Infra & Global (Rose)
   {
-    title: "i18n & Localization",
-    items: [
-        { name: "i18next", icon: Globe },
-        { name: "Lingui", icon: Globe2 },
-        { name: "Arabic RTL", icon: Globe }
-    ],
-    description: "Specialized context for RTL and Arabic fonts",
-    icon: Globe,
+    title: "Arabic & RTL",
+    description: "Specialized support for Arabic typography and professional RTL layouts",
+    icon: Languages,
     color: "text-rose-400",
     bg: "bg-rose-500/10",
     border: "border-rose-500/20"
   },
   {
-    title: "Auth Templates",
+    title: "Global Flags",
     items: [
-        { name: "JWT", icon: Key },
-        { name: "Auth.js", icon: Lock }
+        { name: "--verbose", icon: TerminalIcon },
+        { name: "--dry-run", icon: ScanEye }
     ],
-    icon: Lock,
-    color: "text-rose-400",
-    bg: "bg-rose-500/10",
-    border: "border-rose-500/20"
-  },
-  {
-    title: "CI/CD",
-    description: "GitHub Actions workflow included",
-    icon: GitBranch,
+    icon: Flag,
     color: "text-rose-400",
     bg: "bg-rose-500/10",
     border: "border-rose-500/20"
@@ -218,7 +227,7 @@ const features: FeatureItem[] = [
         { name: "Atomic", icon: Atom },
         { name: "FSD", icon: Layers }
     ],
-    icon: FolderTree,
+    icon: Workflow,
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
     border: "border-indigo-500/20"
@@ -228,10 +237,10 @@ const features: FeatureItem[] = [
     items: [
         { name: "SBOM", icon: ShieldCheck },
         { name: "Zero-Trust", icon: Lock },
-        { name: "Doctor", icon: Bot }
+        { name: "System Check", icon: Bot }
     ],
     description: "Built-in security audits and system health checks",
-    icon: ShieldCheck,
+    icon: ShieldAlert,
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
     border: "border-indigo-500/20"
@@ -239,11 +248,11 @@ const features: FeatureItem[] = [
   {
     title: "Visual Testing",
     items: [
-        { name: "Storybook", icon: Eye },
+        { name: "Storybook", icon: ScanEye },
         { name: "Ladle", icon: Layout },
         { name: "Auto-Story", icon: Sparkles }
     ],
-    icon: Eye,
+    icon: Microscope,
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
     border: "border-indigo-500/20"
@@ -251,7 +260,7 @@ const features: FeatureItem[] = [
   {
     title: "AI Instructions",
     description: "Auto-generate guides for Cursor, Windsurf, & Claude",
-    icon: Bot,
+    icon: BrainCircuit,
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
     border: "border-indigo-500/20"
@@ -259,30 +268,22 @@ const features: FeatureItem[] = [
   {
     title: "Presets",
     items: [
-        { name: "SaaS", icon: Package },
-        { name: "Dashboard", icon: Layout }
+        { name: "SaaS", icon: Rocket },
+        { name: "Dashboard", icon: LayoutDashboard }
     ],
-    icon: Package,
+    icon: Wand2,
     color: "text-cyan-400",
     bg: "bg-cyan-500/10",
     border: "border-cyan-500/20"
   },
-  {
-    title: "Dry Run Mode",
-    description: "Preview changes before creating files",
-    icon: Eye,
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/20"
-  },
+
   {
     title: "Maintenance Suite",
     items: [
-        { name: "Undo", icon: ArrowRightLeft },
-        { name: "Migrate", icon: GitBranch },
-        { name: "Update", icon: Zap }
+        { name: "Check", icon: Stethoscope },
+        { name: "Update", icon: RefreshCw }
     ],
-    icon: Settings,
+    icon: Hammer,
     color: "text-cyan-400",
     bg: "bg-cyan-500/10",
     border: "border-cyan-500/20"

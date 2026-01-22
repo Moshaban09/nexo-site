@@ -33,7 +33,7 @@ export const Hero = () => {
             className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300 mb-6 backdrop-blur-sm shadow-blue-500/10 shadow-lg"
           >
             <span className="flex h-1.5 w-1.5 rounded-full bg-blue-400 mr-2 animate-pulse"></span>
-            v1.2.1 — Refined Release
+            v1.3.0 — Zero-Latency Orchestration
           </motion.div>
 
           <motion.h1
@@ -50,7 +50,7 @@ export const Hero = () => {
             variants={fadeIn}
             className="text-lg md:text-xl text-neutral-400 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Scaffold React, Next.js, and modern web stacks instantly. The AI-Native CLI with first-class Arabic RTL support and security-first orchestration.
+            Zero-latency I/O, AI-native context, and security-first orchestration. Scaffold React foundations with professional Arabic RTL support in milliseconds.
           </motion.p>
 
           <motion.div
@@ -86,17 +86,15 @@ export const Hero = () => {
             className="max-w-2xl mx-auto"
             command="npm create nexo@latest"
             output={[
-              "✔ Project name ... my-awesome-app",
-              "✔ Select framework › React (Vite)",
-              "✔ Select variant › TypeScript + React Compiler ⭐",
-              "✔ Select styling › Tailwind CSS v4",
-              "✔ Select UI Library › shadcn/ui",
-              "✔ Add AI Context? … Yes (Arabic Optimization)",
-              "✔ Add Security Suite? … Yes (SBOM)",
+              "✔ Framework › React 19 (Vite)",
+              "✔ Variant › TypeScript 5.7+ (SWC)",
+              "✔ Styling › Tailwind CSS v4",
+              "✔ UI Library › HeroUI (NextUI)",
+              "✔ AI Context? … Yes (.nexo/ai-context.md)",
               "",
-              "⚡ Scaffolding project in ./my-awesome-app...",
-              "✨ Done in 1.4s! Now run:",
-              "  cd my-awesome-app && npm run dev"
+              "⚡ Zero-latency I/O: Initializing memory-resident package.json",
+              "✨ Done in 0.8s! Now run:",
+              "  cd my-nexo-app && npm run dev"
             ]}
           />
 

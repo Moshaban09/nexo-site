@@ -2,7 +2,6 @@ import {
   ArrowRight, Blocks,
   BrainCircuit,
   Globe,
-  RefreshCw,
   Rocket,
   Settings2,
   ShieldCheck,
@@ -77,9 +76,9 @@ export const DocsIntro = () => {
                             <Zap size={20} />
                         </div>
                         <div>
-                            <h4 className="font-bold text-white">Performance First</h4>
+                            <h4 className="font-bold text-white">Zero-Latency Orchestration</h4>
                             <p className="text-sm text-neutral-400 mt-1">
-                                Sub-second scaffolding, immediate dev server starts with Vite, and optimized production builds.
+                                High-efficiency package management with memory-resident state and atomic Git operations for instant scaffolding.
                             </p>
                         </div>
                     </li>
@@ -117,20 +116,6 @@ export const DocsIntro = () => {
                         </div>
                     </li>
                 </ul>
-            </section>
-
-            {/* Migration Section */}
-            <section className="p-6 rounded-2xl bg-blue-500/5 border border-blue-500/10">
-                <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                    <RefreshCw className="text-blue-400" size={20} />
-                    Already have a project?
-                </h2>
-                <p className="text-neutral-400 mb-4">
-                    NEXO isn't just for new projects. Use the <code>migrate</code> command to intelligently inject NEXO's logic and tools into any existing React project.
-                </p>
-                <div className="bg-black/50 rounded-lg p-4 font-mono text-sm text-blue-300 border border-white/5">
-                    $ nexo migrate
-                </div>
             </section>
 
             {/* Next Steps CTA */}

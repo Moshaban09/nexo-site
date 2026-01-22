@@ -7,8 +7,8 @@ import { Button } from '../ui/Button';
 const templates = [
   {
     name: "SaaS Starter",
-    description: "Production-ready stack with Auth, Database, and Payment integration.",
-    features: ["Authentication Ready", "API Routes", "PostgreSQL Setup"],
+    description: "High-performance stack with professional RTL support and AI optimization.",
+    features: ["AI Context Ready", "Optimized Pipeline", "RTL/LTR Support"],
     command: "nexo create my-saas --preset=saas",
     icon: Globe,
     color: "blue",

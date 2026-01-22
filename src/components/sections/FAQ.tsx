@@ -20,10 +20,6 @@ const faqs = [
     question: "Is TypeScript mandatory?",
     answer: "We strongly recommend TypeScript for the best experience and type safety, but it is not mandatory. You can choose JavaScript during the setup wizard or via the `--js` flag."
   },
-  {
-    question: "Can I add NEXO to an existing project?",
-    answer: "Yes! Originally designed for new projects, NEXO v1.2.0 introduces the `nexo migrate` command. This intelligently detects your current tech stack and layers in NEXO's power tools, folder structures, and AI context without breaking your existing features."
-  }
 ];
 
 const AccordionItem = ({ question, answer, isOpen, onClick }: { question: string, answer: string, isOpen: boolean, onClick: () => void }) => {

@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Global Cursor Reset */
+button, [role="button"], a, input[type="submit"], input[type="reset"], input[type="button"], .cursor-pointer {
+  cursor: pointer !important;
+}
+
 @theme {
   --color-brand-primary: #3b82f6;
   --color-brand-secondary: #8b5cf6;

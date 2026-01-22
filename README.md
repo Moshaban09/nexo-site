@@ -30,7 +30,15 @@
 
 ## ✨ About
 
-This is the official website and documentation for **NEXO CLI** — a next-generation scaffolding CLI for modern React projects. Build production-ready apps in seconds with TypeScript, Tailwind CSS v4, and best practices baked in.
+This is the official website for **NEXO CLI** — a next-generation orchestration engine for modern React projects. Version 1.3.0 introduces a **Single Binary Architecture** (~226KB) and **Zero-Latency I/O**, allowing you to build production-ready apps in milliseconds with absolute safety and AI-native alignment.
+
+## 🚀 Key Features (v1.3.0)
+
+- ⚡ **Zero-Latency I/O** — Memory-resident `package.json` management.
+- 📦 **Single Binary** — Entire CLI bundled into one ~226KB file.
+- 🧠 **AI-Native** — Auto-generated `.nexo/ai-context.md` and modular Cursor rules.
+- 🛡️ **Dry Run Safety** — Preview file changes before they touch the disk.
+- 🌍 **Arabic & RTL** — Professional typography and layout standards.
 
 ## 🛠 Tech Stack
 

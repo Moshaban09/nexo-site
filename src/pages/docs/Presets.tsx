@@ -1,9 +1,9 @@
 import {
-  Check,
-  CreditCard,
-  LayoutDashboard,
-  LayoutTemplate,
-  Rocket,
+    Check,
+    CreditCard,
+    LayoutDashboard,
+    LayoutTemplate,
+    Rocket,
 } from "lucide-react";
 import { CodeBlock, DocsLayout, Layout } from "../..";
 
@@ -12,16 +12,16 @@ const presets = [
     name: "SaaS Starter",
     slug: "saas",
     description:
-      "The complete package for building subscription-based software.",
+      "High-performance foundation for modern SaaS platforms.",
     icon: Rocket,
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20",
     features: [
-      "Auth (Clerk/Supabase)",
-      "Stripe Subscription UI",
+      "AI Context Generation",
+      "RTL/Arabic Support",
       "Dashboard Layout",
-      "Settings & Profile",
+      "Optimized Build",
     ],
   },
   {

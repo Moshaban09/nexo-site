@@ -1,14 +1,12 @@
 import { ArrowLeft, Home } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Footer, Navbar } from "..";
+import { Layout } from "../components/layout/Layout";
 import { Button } from "../components/ui/Button";
 
 export const NotFound = () => {
   return (
-    <div className="min-h-screen bg-bg-dark flex flex-col">
-      <Navbar />
-
-      <main className="flex-1 flex items-center justify-center px-4">
+    <Layout>
+      <main className="flex-1 flex items-center justify-center px-4 py-20">
         <div className="text-center max-w-2xl mx-auto">
           {/* 404 Number */}
           <div className="relative mb-8">
@@ -64,8 +62,6 @@ export const NotFound = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };

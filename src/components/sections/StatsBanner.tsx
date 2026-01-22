@@ -1,8 +1,13 @@
 import { motion } from 'framer-motion';
-import { Download, Star, Zap } from 'lucide-react';
+import { Download, Package, Star, Zap } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { fadeIn } from '../../lib/animations';
-import { fetchProjectStats, type ProjectStats } from '../../lib/stats';
+
+interface ProjectStats {
+    stars: number;
+    downloads: number;
+    setupTime: string;
+}
 
 const CountUp = ({ value, duration = 2 }: { value: number, duration?: number }) => {
     const [count, setCount] = useState(0);
@@ -31,11 +36,32 @@ export const StatsBanner = () => {
     const [stats, setStats] = useState<ProjectStats>({
         stars: 0,
         downloads: 0,
-        setupTime: '< 25s'
+        setupTime: 'Zero-Latency'
     });
 
     useEffect(() => {
-        fetchProjectStats().then(setStats);
+        const fetchStats = async () => {
+            try {
+                // Fetch GitHub Stars
+                const githubResponse = await fetch('https://api.github.com/repos/Moshaban09/create-nexo');
+                const githubData = await githubResponse.json();
+
+                // Fetch NPM Downloads
+                const npmResponse = await fetch('https://api.npmjs.org/downloads/point/last-month/create-nexo');
+                const npmData = await npmResponse.json();
+
+                setStats({
+                    stars: githubData.stargazers_count || 0,
+                    downloads: npmData.downloads || 0,
+                    setupTime: 'Zero-Latency'
+                });
+            } catch (error) {
+                console.error('Failed to fetch stats:', error);
+                // Keep default/fallback values on error
+            }
+        };
+
+        fetchStats();
     }, []);
 
     const formatDownloads = (num: number) => {
@@ -66,13 +92,20 @@ export const StatsBanner = () => {
             icon: Zap,
             color: "text-emerald-400",
             bg: "bg-emerald-500/10"
+        },
+        {
+            label: "Bundle Size",
+            value: "~226KB",
+            icon: Package,
+            color: "text-purple-400",
+            bg: "bg-purple-500/10"
         }
     ];
 
     return (
         <section className="py-12 border-y border-white/5 bg-black/40 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
                     {statItems.map((item, idx) => (
                         <motion.div
                             key={item.label}

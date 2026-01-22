@@ -7,12 +7,8 @@ const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })))
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
 const DocsIntro = lazy(() => import('./pages/docs/Introduction').then(m => ({ default: m.DocsIntro })));
 const DocsInstallation = lazy(() => import('./pages/docs/Installation').then(m => ({ default: m.DocsInstallation })));
-const DocsStructure = lazy(() => import('./pages/docs/Structure').then(m => ({ default: m.DocsStructure })));
 const DocsPresets = lazy(() => import('./pages/docs/Presets').then(m => ({ default: m.DocsPresets })));
 const DocsCLICommands = lazy(() => import('./pages/docs/CLICommands').then(m => ({ default: m.DocsCLICommands })));
-const DocsConfiguration = lazy(() => import('./pages/docs/Configuration').then(m => ({ default: m.DocsConfiguration })));
-const DocsTesting = lazy(() => import('./pages/docs/Testing').then(m => ({ default: m.DocsTesting })));
-const DocsDeploying = lazy(() => import('./pages/docs/Deploying').then(m => ({ default: m.DocsDeploying })));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -33,12 +29,8 @@ function App() {
           <Route path="/docs" element={<DocsIntro />} />
           <Route path="/docs/installation" element={<DocsInstallation />} />
           <Route path="/docs/quick-start" element={<Navigate to="/docs/installation" replace />} />
-          <Route path="/docs/structure" element={<DocsStructure />} />
           <Route path="/docs/presets" element={<DocsPresets />} />
           <Route path="/docs/cli-commands" element={<DocsCLICommands />} />
-          <Route path="/docs/configuration" element={<DocsConfiguration />} />
-          <Route path="/docs/testing" element={<DocsTesting />} />
-          <Route path="/docs/deploying" element={<DocsDeploying />} />
 
           {/* 404 Catch-all Route */}
           <Route path="*" element={<NotFound />} />
