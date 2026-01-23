@@ -17,7 +17,6 @@ import {
     FormInput,
     Hammer,
     HardDrive,
-    Languages,
     Layers,
     Layout,
     LayoutDashboard,
@@ -113,6 +112,19 @@ const features: FeatureItem[] = [
     border: "border-blue-500/20"
   },
   {
+    title: "Turbo-Install Engine",
+    description: "Slashes install time by 30% using optimized caching and parallel resolution flags.",
+    items: [
+        { name: "--prefer-offline", icon: HardDrive },
+        { name: "--no-audit", icon: ShieldAlert },
+        { name: "--legacy-peer-deps", icon: Layers }
+    ],
+    icon: Zap,
+    color: "text-blue-400",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/20"
+  },
+  {
     title: "Zero-Dependency Binary",
     description: "Entire CLI bundled into a single ~226KB file for instant installation",
     icon: Box,
@@ -127,7 +139,6 @@ const features: FeatureItem[] = [
     title: "Modern Styling",
     items: [
         { name: "Tailwind v4", icon: Wind },
-        { name: "CSS Modules", icon: FileCode },
         { name: "Sass", icon: FileJson }
     ],
     icon: Palette,
@@ -198,11 +209,20 @@ const features: FeatureItem[] = [
     border: "border-emerald-500/20"
   },
 
-  // Infra & Global (Rose)
+
   {
-    title: "Arabic & RTL",
-    description: "Specialized support for Arabic typography and professional RTL layouts",
-    icon: Languages,
+    title: "Multi-PM Support",
+    description: "Native detection and optimization for pnpm, Bun, and Yarn",
+    icon: Rocket,
+    badge: "NEW",
+    color: "text-rose-400",
+    bg: "bg-rose-500/10",
+    border: "border-rose-500/20"
+  },
+  {
+    title: "Conflict-Free Deps",
+    description: "Automatic peer dependency resolution via --legacy-peer-deps",
+    icon: ShieldCheck,
     color: "text-rose-400",
     bg: "bg-rose-500/10",
     border: "border-rose-500/20"

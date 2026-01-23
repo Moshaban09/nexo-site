@@ -1,4 +1,4 @@
-import { Book, ChevronDown, Download, ExternalLink, Github, Home, LayoutTemplate, Menu, Package, Terminal, X, Zap } from "lucide-react";
+import { Book, ChevronDown, Download, ExternalLink, Github, Home, Menu, Package, Terminal, X, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "./ui/Button";
@@ -19,7 +19,7 @@ export const Sidebar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (location.pathname === "/") {
-        const sections = ["hero", "features", "templates", "comparison", "faq"];
+        const sections = ["hero", "features", "comparison", "faq"];
         let current = "";
 
         for (const section of sections) {
@@ -117,7 +117,7 @@ export const Sidebar = () => {
             <span className="text-3xl font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
               NEXO
             </span>
-            <span className="text-[10px] font-bold text-blue-500 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20 uppercase tracking-tighter">v1.3.0</span>
+            <span className="text-[10px] font-bold text-blue-500 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20 uppercase tracking-tighter">v1.4.1</span>
           </Link>
 
           {/* Navigation Links */}
@@ -125,7 +125,10 @@ export const Sidebar = () => {
             <Link
               to="/"
               className={navItemClass(location.pathname === "/" && !activeSection)}
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setIsOpen(false);
+              }}
             >
               <Home size={18} />
               <span className="font-medium">Home</span>
@@ -139,13 +142,7 @@ export const Sidebar = () => {
               <span className="font-medium">Features</span>
             </button>
 
-            <button
-              onClick={() => scrollToSection("templates")}
-              className={navItemClass(activeSection === "templates")}
-            >
-              <LayoutTemplate size={18} />
-              <span className="font-medium">Templates</span>
-            </button>
+
 
             <div className="pt-4 pb-2">
               <div

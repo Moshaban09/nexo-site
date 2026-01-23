@@ -9,13 +9,12 @@
     ],
     "subheadlines": [
       "Scaffold React, Next.js, and modern web stacks instantly.",
-      "AI-Native CLI with first-class Arabic RTL support.",
+      "AI-Native CLI with first-class orchestration support.",
       "Zero config fatigue. Best practices built-in by default."
     ],
-    "description": "NEXO is the definitive CLI for React, Next.js, and modern web frameworks. Powered by AI-Native context and RTL support, get a production-ready codebase in seconds.",
+    "description": "NEXO is the definitive CLI for React, Next.js, and modern web frameworks. Powered by AI-Native context and high-performance orchestration, get a production-ready codebase in seconds.",
     "cta": {
       "primary": "Get Started",
-      "secondary": "View Templates",
       "copyCommand": "npm create nexo@latest"
     },
     "stats": [
@@ -29,7 +28,7 @@
       },
       {
         "label": "Version",
-        "value": "v1.2.1"
+        "value": "v1.4.1"
       }
     ]
   },
@@ -58,12 +57,7 @@
       "icon": "🧠",
       "benefit": "AI assistants understand your project structure perfectly."
     },
-    {
-      "title": "Arabic Context Awareness",
-      "description": "Specialized support for RTL layouts, Arabic fonts, and local terminology in AI instructions.",
-      "icon": "🌍",
-      "benefit": "First-class development experience for the Arabic web."
-    },
+
     {
       "title": "Security Hardening",
       "description": "Built-in SBOM generation, zero-trust patterns, and automatic security audits with 'nexo health'.",
@@ -87,7 +81,7 @@
     {
       "command": "nexo create",
       "description": "Create a new project with the interactive wizard or flags.",
-      "flags": ["--dir", "--dry-run", "--preset", "--parallel"],
+      "flags": ["--dir", "--dry-run", "--preset", "--audit", "--strict"],
       "example": "nexo create my-app --preset=saas"
     },
     {
@@ -123,11 +117,25 @@
   ],
   "changelog": [
     {
-      "version": "1.2.1",
-      "date": "2026-01-21",
+      "version": "1.4.1",
+      "date": "2026-01-23",
       "changes": [
-        "Corrected npx install command in documentation",
-        "Optimized core features list reorganization"
+        "Multi-Package Manager Support (npm, pnpm, Bun, Yarn)",
+        "Setup Progress Steps and UX improvements",
+        "Legacy Peer Deps handling for React 19",
+        "New flags: --audit, --strict",
+        "212+ Tests Passing & Stability fixes"
+      ]
+    },
+    {
+      "version": "1.3.0",
+      "date": "2026-01-22",
+      "changes": [
+        "Zero-Latency I/O orchestration",
+        "Single Binary Architecture (~226KB)",
+        "Removed Mantine and Plain CSS",
+        "Unified nexo check command",
+        "Dry Run & Verbose modes"
       ]
     },
     {
@@ -137,8 +145,7 @@
         "Modular Command Structure refactor",
         "Modular Cursor Rules & Arabic Context Awareness",
         "Persistent Disk Cache for instant startup",
-        "SBOM Generation & Security Hardening",
-        "New commands: health, doctor, generate api, undo, migrate, update"
+        "SBOM Generation & Security Hardening"
       ]
     }
   ]

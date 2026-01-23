@@ -21,7 +21,7 @@ const steps = [
     step: "Scaffold",
     code: "nexo create my-app",
     description: "NEXO orchestrates the file creation, setting up routing, state, and UI seamlessly.",
-    output: "Done in 0.8s",
+    output: "Done in 0.6s",
     icon: Check,
   },
   {

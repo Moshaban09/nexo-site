@@ -20,6 +20,10 @@ const faqs = [
     question: "Is TypeScript mandatory?",
     answer: "We strongly recommend TypeScript for the best experience and type safety, but it is not mandatory. You can choose JavaScript during the setup wizard or via the `--js` flag."
   },
+  {
+    question: "Why is the installation so much faster than normal?",
+    answer: "NEXO employs an optimized 'Turbo-Install' strategy by combining flags like --prefer-offline, --no-audit, and --progress=false. It also automatically handles React 19 dependency trees with --legacy-peer-deps, bypassing redundant network checks and UI overhead for a 30% faster setup."
+  },
 ];
 
 const AccordionItem = ({ question, answer, isOpen, onClick }: { question: string, answer: string, isOpen: boolean, onClick: () => void }) => {

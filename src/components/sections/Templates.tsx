@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, LayoutTemplate, Palette, Zap } from 'lucide-react';
+import { ArrowRight, Globe, Layout, Palette, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { fadeIn, staggerContainer } from '../../lib/animations';
 import { Button } from '../ui/Button';
@@ -19,7 +19,7 @@ const templates = [
     description: "Data-dense layout with sidebar, charts, and table examples.",
     features: ["Sidebar Layout", "Recharts Integrated", "Data Tables"],
     command: "nexo create my-dash --preset=dashboard",
-    icon: LayoutTemplate,
+    icon: Layout,
     color: "emerald",
     path: "/docs/presets#dashboard"
   },

@@ -1,12 +1,11 @@
 import {
-  Comparison,
-  FAQ,
-  Features,
-  Hero,
-  HowItWorks,
-  Layout,
-  StatsBanner,
-  Templates
+    Comparison,
+    FAQ,
+    Features,
+    Hero,
+    HowItWorks,
+    Layout,
+    StatsBanner
 } from "..";
 
 export const Home = () => {
@@ -15,7 +14,6 @@ export const Home = () => {
       <Hero />
       <Features />
       <HowItWorks />
-      <Templates />
       <Comparison />
       <FAQ />
       <StatsBanner />

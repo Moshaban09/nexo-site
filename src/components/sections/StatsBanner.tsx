@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Download, Package, Star, Zap } from 'lucide-react';
+import { ClipboardCheck, Download, Package, Star } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { fadeIn } from '../../lib/animations';
 
@@ -87,9 +87,9 @@ export const StatsBanner = () => {
             bg: "bg-yellow-500/10"
         },
         {
-            label: "Setup Time",
-            value: stats.setupTime,
-            icon: Zap,
+            label: "Tests Passing",
+            value: <CountUp value={212} />,
+            icon: ClipboardCheck,
             color: "text-emerald-400",
             bg: "bg-emerald-500/10"
         },

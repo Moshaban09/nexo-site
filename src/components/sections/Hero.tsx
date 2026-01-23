@@ -33,7 +33,7 @@ export const Hero = () => {
             className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300 mb-6 backdrop-blur-sm shadow-blue-500/10 shadow-lg"
           >
             <span className="flex h-1.5 w-1.5 rounded-full bg-blue-400 mr-2 animate-pulse"></span>
-            v1.3.0 — Zero-Latency Orchestration
+            v1.4.1 — Multi-PM & Performance
           </motion.div>
 
           <motion.h1
@@ -50,7 +50,7 @@ export const Hero = () => {
             variants={fadeIn}
             className="text-lg md:text-xl text-neutral-400 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Zero-latency I/O, AI-native context, and security-first orchestration. Scaffold React foundations with professional Arabic RTL support in milliseconds.
+            Zero-latency I/O, AI-native context, and security-first orchestration. Scaffold React foundations in milliseconds.
           </motion.p>
 
           <motion.div
@@ -87,14 +87,16 @@ export const Hero = () => {
             command="npm create nexo@latest"
             output={[
               "✔ Framework › React 19 (Vite)",
-              "✔ Variant › TypeScript 5.7+ (SWC)",
+              "✔ Variant › TypeScript 5.8+ (SWC)",
               "✔ Styling › Tailwind CSS v4",
+              "✔ Package Manager › pnpm",
               "✔ UI Library › HeroUI (NextUI)",
               "✔ AI Context? … Yes (.nexo/ai-context.md)",
               "",
               "⚡ Zero-latency I/O: Initializing memory-resident package.json",
-              "✨ Done in 0.8s! Now run:",
-              "  cd my-nexo-app && npm run dev"
+              "⚡ Turbo-Install: Bypassing redundant audits & fund checks",
+              "✨ Done in 0.6s! Now run:",
+              "  cd my-nexo-app && pnpm dev"
             ]}
           />
 
