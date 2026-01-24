@@ -1,4 +1,4 @@
-import { Book, ChevronDown, Download, ExternalLink, Github, Home, Menu, Package, Terminal, X, Zap } from "lucide-react";
+import { Book, ChevronDown, Download, ExternalLink, Github, Home, Layout, Menu, Package, Terminal, X, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "./ui/Button";
@@ -19,7 +19,7 @@ export const Sidebar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (location.pathname === "/") {
-        const sections = ["hero", "features", "comparison", "faq"];
+        const sections = ["hero", "features", "templates", "comparison", "faq"];
         let current = "";
 
         for (const section of sections) {
@@ -117,7 +117,7 @@ export const Sidebar = () => {
             <span className="text-3xl font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
               NEXO
             </span>
-            <span className="text-[10px] font-bold text-blue-500 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20 uppercase tracking-tighter">v1.4.1</span>
+            <span className="text-[10px] font-bold text-blue-500 bg-blue-500/10 px-1.5 py-0.5 rounded border border-blue-500/20 uppercase tracking-tighter">v1.5.0</span>
           </Link>
 
           {/* Navigation Links */}
@@ -140,6 +140,14 @@ export const Sidebar = () => {
             >
               <Zap size={18} />
               <span className="font-medium">Features</span>
+            </button>
+
+            <button
+              onClick={() => scrollToSection("templates")}
+              className={navItemClass(activeSection === "templates")}
+            >
+              <Layout size={18} />
+              <span className="font-medium">Templates</span>
             </button>
 
 

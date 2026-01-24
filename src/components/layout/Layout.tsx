@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+import { fadeIn } from '../../lib/animations';
 import { Footer } from '../Footer';
 import { Sidebar } from '../Sidebar';
 
@@ -9,7 +11,14 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <Sidebar />
 
       <main className="relative z-10 w-full flex-grow lg:pl-72 pt-16 lg:pt-0">
-        {children}
+        <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="w-full h-full"
+        >
+            {children}
+        </motion.div>
       </main>
 
       <div className="lg:pl-72">

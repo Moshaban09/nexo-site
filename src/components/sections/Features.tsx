@@ -64,8 +64,8 @@ interface FeatureItem {
 const features: FeatureItem[] = [
   // Core / Dev Exp (Blue)
   {
-    title: "React 19",
-    description: "The latest React features including Actions and unified Hooks",
+    title: "React 19 & Compiler",
+    description: "Built for speed with native React 19 and React Compiler support",
     icon: Atom,
     color: "text-blue-400",
     bg: "bg-blue-500/10",
@@ -241,11 +241,11 @@ const features: FeatureItem[] = [
 
   // Architecture & Tools (Indigo/Cyber)
   {
-    title: "Project Structures",
+    title: "Project Architecture",
     items: [
+        { name: "FSD", icon: Layers },
         { name: "Feature-based", icon: FolderTree },
-        { name: "Atomic", icon: Atom },
-        { name: "FSD", icon: Layers }
+        { name: "Clean Architecture", icon: Workflow }
     ],
     icon: Workflow,
     color: "text-indigo-400",
@@ -278,8 +278,8 @@ const features: FeatureItem[] = [
     border: "border-indigo-500/20"
   },
   {
-    title: "AI Instructions",
-    description: "Auto-generate guides for Cursor, Windsurf, & Claude",
+    title: "AI-Native Context",
+    description: "Auto-generated .nexo/ai-context.md for LLM alignment",
     icon: BrainCircuit,
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
@@ -298,11 +298,12 @@ const features: FeatureItem[] = [
   },
 
   {
-    title: "Maintenance Suite",
+    title: "Unified Maintenance",
     items: [
         { name: "Check", icon: Stethoscope },
         { name: "Update", icon: RefreshCw }
     ],
+    description: "Total project health, security, and bundle auditing",
     icon: Hammer,
     color: "text-cyan-400",
     bg: "bg-cyan-500/10",

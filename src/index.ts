@@ -1,6 +1,6 @@
-// Layout Components
 export { DocsLayout } from "./components/layout/DocsLayout";
 export { Layout } from "./components/layout/Layout";
+export { ScrollToTop } from "./components/logic/ScrollToTop";
 
 // Components from root components directory
 export { Footer } from "./components/Footer";

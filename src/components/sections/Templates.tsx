@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Globe, Layout, Palette, Zap } from 'lucide-react';
+import { ArrowRight, Book, Globe, Layout, Palette, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { fadeIn, staggerContainer } from '../../lib/animations';
 import { Button } from '../ui/Button';
@@ -9,28 +9,51 @@ const templates = [
     name: "SaaS Starter",
     description: "High-performance stack with professional RTL support and AI optimization.",
     features: ["AI Context Ready", "Optimized Pipeline", "RTL/LTR Support"],
-    command: "nexo create my-saas --preset=saas",
+    command: "nexo create --preset=saas",
     icon: Globe,
     color: "blue",
-    path: "/docs/presets#saas"
+    path: "#",
+    isComingSoon: true
   },
   {
     name: "Admin Dashboard",
     description: "Data-dense layout with sidebar, charts, and table examples.",
     features: ["Sidebar Layout", "Recharts Integrated", "Data Tables"],
-    command: "nexo create my-dash --preset=dashboard",
+    command: "nexo create --preset=dashboard",
     icon: Layout,
     color: "emerald",
-    path: "/docs/presets#dashboard"
+    path: "#",
+    isComingSoon: true
   },
   {
     name: "Minimal App",
     description: "The absolute essentials. Vite + React + TypeScript + Tailwind.",
     features: ["Zero Bloat", "Latest Vite", "Fast Refresh"],
-    command: "nexo create my-app --preset=minimal",
+    command: "nexo create --preset=minimal",
     icon: Palette,
     color: "purple",
-    path: "/docs/presets#minimal"
+    path: "#",
+    isComingSoon: true
+  },
+  {
+    name: "Ecommerce Starter",
+    description: "Complete shop foundation with product grids, cart, and checkout logic.",
+    features: ["Product Filters", "Cart Management", "Stripe Ready"],
+    command: "nexo create --preset=ecommerce",
+    icon: Zap,
+    color: "amber",
+    path: "#",
+    isComingSoon: true
+  },
+  {
+    name: "Documentation Site",
+    description: "SEO-optimized docs with versioning, search, and MDX support.",
+    features: ["MDX Support", "Algolia Ready", "Sidebar Nav"],
+    command: "nexo create --preset=documentation",
+    icon: Book,
+    color: "rose",
+    path: "#",
+    isComingSoon: true
   }
 ];
 
@@ -49,8 +72,14 @@ export const Templates = () => {
             Start with a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Winning Template</span>
           </motion.h2>
           <motion.p variants={fadeIn} className="text-xl text-neutral-400 max-w-2xl mx-auto">
-             Don't reinvent the wheel. Choose a production-ready preset.
+             Pre-configured, production-ready presets are coming soon to the NEXO ecosystem.
           </motion.p>
+          <motion.div variants={fadeIn} className="mt-4">
+             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-medium text-blue-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+                More templates coming soon
+             </span>
+          </motion.div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -61,9 +90,16 @@ export const Templates = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative bg-[#0f0f0f] rounded-2xl overflow-hidden hover:bg-[#131313] transition-colors duration-300 border border-white/10 hover:border-blue-500/40 flex flex-col shadow-lg hover:shadow-xl hover:shadow-blue-500/5"
+              className={`group relative bg-[#0f0f0f] rounded-2xl overflow-hidden hover:bg-[#131313] transition-colors duration-300 border border-white/10 hover:border-blue-500/40 flex flex-col shadow-lg hover:shadow-xl hover:shadow-blue-500/5 ${template.isComingSoon ? 'opacity-70 grayscale-[0.5]' : ''}`}
             >
-
+              {template.isComingSoon && (
+                <div className="absolute top-4 right-4 z-20">
+                    <span className="px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-[10px] font-bold text-amber-500 uppercase tracking-widest flex items-center gap-2 shadow-lg shadow-amber-500/5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                        Coming Soon
+                    </span>
+                </div>
+              )}
               <div className="p-8 flex flex-col h-full">
                  <div className="flex items-center justify-between mb-6">
                     <div className={`p-3 rounded-xl bg-${template.color}-500/10 text-${template.color}-400 group-hover:scale-105 transition-transform duration-300 ring-1 ring-white/5`}>
@@ -89,15 +125,23 @@ export const Templates = () => {
                  </div>
 
                  <div className="mt-auto pt-6 border-t border-white/5 space-y-4">
-                     <Link to={template.path} className="block">
-                         <Button variant="outline" className="w-full justify-between items-center group-hover:border-blue-500/30 group-hover:bg-blue-500/5 group-hover:text-blue-300 transition-all">
-                             View Details
-                             <ArrowRight size={14} className="ml-2 opacity-50 group-hover:translate-x-1 transition-transform" />
+                     {template.isComingSoon ? (
+                         <Button variant="outline" disabled className="w-full justify-center items-center opacity-50 cursor-not-allowed">
+                             Coming Soon
                          </Button>
-                     </Link>
-                     <div className="font-mono text-[10px] text-neutral-600 text-center select-all cursor-text">
-                         {template.command}
-                     </div>
+                     ) : (
+                         <Link to={template.path} className="block">
+                             <Button variant="outline" className="w-full justify-between items-center group-hover:border-blue-500/30 group-hover:bg-blue-500/5 group-hover:text-blue-300 transition-all">
+                                 View Details
+                                 <ArrowRight size={14} className="ml-2 opacity-50 group-hover:translate-x-1 transition-transform" />
+                             </Button>
+                         </Link>
+                     )}
+                     {!template.isComingSoon && (
+                        <div className="font-mono text-[10px] text-neutral-600 text-center select-all cursor-text">
+                            {template.command}
+                        </div>
+                     )}
                  </div>
               </div>
             </motion.div>
