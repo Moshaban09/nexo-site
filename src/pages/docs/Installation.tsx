@@ -1,11 +1,9 @@
 import { AlertCircle, CheckCircle2, Package, Terminal as TerminalIcon } from 'lucide-react';
 import { DocsLayout } from '../../components/layout/DocsLayout';
-import { Layout } from '../../components/layout/Layout';
 import { CodeBlock } from '../../components/ui/CodeBlock';
 
 export const DocsInstallation = () => {
   return (
-    <Layout>
       <DocsLayout>
         <div className="space-y-10">
             <div>
@@ -83,6 +81,5 @@ export const DocsInstallation = () => {
 
         </div>
       </DocsLayout>
-    </Layout>
   );
 };

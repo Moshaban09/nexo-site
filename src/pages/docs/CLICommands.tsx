@@ -1,6 +1,5 @@
 import { RefreshCw, ShieldCheck, Terminal } from 'lucide-react';
 import { DocsLayout } from '../../components/layout/DocsLayout';
-import { Layout } from '../../components/layout/Layout';
 
 const commands = [
     {
@@ -60,7 +59,6 @@ const commands = [
 
 export const DocsCLICommands = () => {
     return (
-        <Layout>
             <DocsLayout>
                 <div className="space-y-12">
                      <div className="max-w-3xl">
@@ -124,6 +122,5 @@ export const DocsCLICommands = () => {
                     </div>
                 </div>
             </DocsLayout>
-        </Layout>
     );
 };

@@ -1,4 +1,4 @@
-import { Github, MessageSquare, Twitter } from "lucide-react";
+import { Github } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
@@ -64,22 +64,6 @@ export const Footer = () => {
               >
                 <Github size={20} />
               </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-neutral-800 transition-all"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-neutral-800 transition-all"
-              >
-                <MessageSquare size={20} />
-              </a>
             </div>
             <p className="text-sm text-neutral-500">
               Join the ecosystem and stay updated.
@@ -91,14 +75,6 @@ export const Footer = () => {
           <p>
             &copy; {new Date().getFullYear()} NEXO. Open Source MIT License.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="hover:text-white transition-colors">
-              Privacy
-            </Link>
-            <Link to="/terms" className="hover:text-white transition-colors">
-              Terms
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

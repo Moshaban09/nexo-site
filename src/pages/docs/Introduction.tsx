@@ -10,11 +10,9 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { DocsLayout } from '../../components/layout/DocsLayout';
-import { Layout } from '../../components/layout/Layout';
 
 export const DocsIntro = () => {
   return (
-    <Layout>
       <DocsLayout>
         <div className="space-y-12">
 
@@ -133,6 +131,5 @@ export const DocsIntro = () => {
             </div>
         </div>
       </DocsLayout>
-    </Layout>
   );
 };

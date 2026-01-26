@@ -24,11 +24,11 @@
       },
       {
         "label": "Bundle Size",
-        "value": "160KB"
+        "value": "226KB"
       },
       {
         "label": "Version",
-        "value": "v1.4.1"
+        "value": "v1.5.0"
       }
     ]
   },
@@ -52,6 +52,12 @@
       "benefit": "Standardized, modern UI layer ready for immediate customization."
     },
     {
+      "title": "Modular Architecture",
+      "description": "Discreet, maintainable modules for maximum scalability and easy contribution.",
+      "icon": "🧩",
+      "benefit": "Clean code structure that scales with your project."
+    },
+    {
       "title": "AI-Native Context",
       "description": "Auto-generated AI instructions and modular Cursor rules tailored to your specific tech choices.",
       "icon": "🧠",
@@ -59,22 +65,16 @@
     },
 
     {
-      "title": "Security Hardening",
-      "description": "Built-in SBOM generation, zero-trust patterns, and automatic security audits with 'nexo health'.",
+      "title": "Security Guard",
+      "description": "Advanced validation for write permissions, disk space, and cross-platform path safety.",
       "icon": "🛡️",
-      "benefit": "Enterprise-grade security from the first line of code."
+      "benefit": "Enterprise-grade security preventing accidental data loss."
     },
     {
       "title": "Maintenance Suite",
-      "description": "Power tools for project health: doctor, health, undo, migrate, and automatic update commands.",
+      "description": "Power tools for project health: check, update, and automatic system diagnostics.",
       "icon": "🛠️",
       "benefit": "Keep your projects healthy and modern with ease."
-    },
-    {
-      "title": "Visual Testing Ready",
-      "description": "One-click Storybook or Ladle integration with automatic story generation for your components.",
-      "icon": "🧪",
-      "benefit": "Verify and document your UI in isolation without effort."
     }
   ],
   "commandReference": [
@@ -85,16 +85,16 @@
       "example": "nexo create my-app --preset=saas"
     },
     {
-      "command": "nexo health",
-      "description": "Audit project security, lockfiles, and bundle health status.",
-      "flags": [],
-      "example": "nexo health"
+      "command": "nexo check",
+      "description": "Unified command for system and project health audits. Replaces doctor and health.",
+      "flags": ["--system", "--project"],
+      "example": "nexo check"
     },
     {
-      "command": "nexo doctor",
-      "description": "Check current system environment and project health.",
-      "flags": [],
-      "example": "nexo doctor"
+      "command": "nexo update",
+      "description": "Self-update the CLI to the latest version.",
+      "flags": ["--dry-run"],
+      "example": "nexo update"
     },
     {
       "command": "nexo generate api",
@@ -116,6 +116,17 @@
     }
   ],
   "changelog": [
+    {
+      "version": "1.5.0",
+      "date": "2026-01-24",
+      "changes": [
+        "Modular Architecture Refactor",
+        "Pre-Write Safety Checks (Disk Space, Permissions)",
+        "Network Resilience with Exponential Backoff",
+        "Security Guard for Path Validation",
+        "Centralized Constants & Validation Utils"
+      ]
+    },
     {
       "version": "1.4.1",
       "date": "2026-01-23",

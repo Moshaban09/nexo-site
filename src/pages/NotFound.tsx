@@ -1,11 +1,9 @@
 import { ArrowLeft, Home } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Layout } from "../components/layout/Layout";
 import { Button } from "../components/ui/Button";
 
 export const NotFound = () => {
   return (
-    <Layout>
       <main className="flex-1 flex items-center justify-center px-4 py-20">
         <div className="text-center max-w-2xl mx-auto">
           {/* 404 Number */}
@@ -62,6 +60,5 @@ export const NotFound = () => {
           </div>
         </div>
       </main>
-    </Layout>
   );
 };

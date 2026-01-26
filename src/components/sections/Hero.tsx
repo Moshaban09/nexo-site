@@ -33,7 +33,7 @@ export const Hero = () => {
             className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300 mb-6 backdrop-blur-sm shadow-blue-500/10 shadow-lg"
           >
             <span className="flex h-1.5 w-1.5 rounded-full bg-blue-400 mr-2 animate-pulse"></span>
-            v1.4.1 — Multi-PM & Performance
+            v1.5.0 — Modular Architecture & Security
           </motion.div>
 
           <motion.h1

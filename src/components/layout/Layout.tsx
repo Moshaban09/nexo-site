@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../lib/animations';
-import { Footer } from '../Footer';
 import { Sidebar } from '../Sidebar';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -21,9 +20,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         </motion.div>
       </main>
 
-      <div className="lg:pl-72">
-        <Footer />
-      </div>
+
     </div>
   );
 };

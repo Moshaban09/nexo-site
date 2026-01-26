@@ -1,9 +1,12 @@
 import { lazy, Suspense } from 'react';
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { createBrowserRouter, Navigate, Outlet, RouterProvider } from 'react-router-dom';
+import { Layout } from './components/layout/Layout';
 import { ScrollToTop } from './components/logic/ScrollToTop';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
+const FeaturesPage = lazy(() => import('./pages/FeaturesPage').then(m => ({ default: m.FeaturesPage })));
+const TemplatesPage = lazy(() => import('./pages/TemplatesPage').then(m => ({ default: m.TemplatesPage })));
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
 const DocsIntro = lazy(() => import('./pages/docs/Introduction').then(m => ({ default: m.DocsIntro })));
 const DocsInstallation = lazy(() => import('./pages/docs/Installation').then(m => ({ default: m.DocsInstallation })));
@@ -17,27 +20,38 @@ const PageLoader = () => (
   </div>
 );
 
+const router = createBrowserRouter([
+  {
+    element: (
+      <>
+        <ScrollToTop />
+        <Layout>
+          <Suspense fallback={<PageLoader />}>
+            <Outlet />
+          </Suspense>
+        </Layout>
+      </>
+    ),
+    children: [
+      { path: "/", element: <Home /> },
+      // Docs Routes
+      { path: "/docs", element: <DocsIntro /> },
+      { path: "/docs/installation", element: <DocsInstallation /> },
+      { path: "/docs/quick-start", element: <Navigate to="/docs/installation" replace /> },
+      { path: "/docs/presets", element: <DocsPresets /> },
+      { path: "/docs/presets", element: <DocsPresets /> },
+      { path: "/docs/cli-commands", element: <DocsCLICommands /> },
+      // New Pages
+      { path: "/features", element: <FeaturesPage /> },
+      { path: "/templates", element: <TemplatesPage /> },
+      // 404 Catch-all Route
+      { path: "*", element: <NotFound /> }
+    ]
+  }
+]);
+
 function App() {
-  return (
-    <Router>
-      <ScrollToTop />
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-
-          {/* Docs Routes */}
-          <Route path="/docs" element={<DocsIntro />} />
-          <Route path="/docs/installation" element={<DocsInstallation />} />
-          <Route path="/docs/quick-start" element={<Navigate to="/docs/installation" replace />} />
-          <Route path="/docs/presets" element={<DocsPresets />} />
-          <Route path="/docs/cli-commands" element={<DocsCLICommands />} />
-
-          {/* 404 Catch-all Route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

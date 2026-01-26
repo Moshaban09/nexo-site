@@ -35,7 +35,7 @@ const CountUp = ({ value, duration = 2 }: { value: number, duration?: number }) 
 export const StatsBanner = () => {
     const [stats, setStats] = useState<ProjectStats>({
         stars: 0,
-        downloads: 0,
+        downloads: 1342,
         setupTime: 'Zero-Latency'
     });
 
@@ -64,17 +64,12 @@ export const StatsBanner = () => {
         fetchStats();
     }, []);
 
-    const formatDownloads = (num: number) => {
-        if (num >= 1000) {
-            return <span><CountUp value={Math.floor(num/1000)} />.{Math.floor((num%1000)/100)}K+</span>;
-        }
-        return <CountUp value={num} />;
-    };
+
 
     const statItems = [
         {
             label: "Downloads",
-            value: formatDownloads(stats.downloads),
+            value: <CountUp value={stats.downloads} />,
             icon: Download,
             color: "text-blue-400",
             bg: "bg-blue-500/10"
@@ -88,7 +83,7 @@ export const StatsBanner = () => {
         },
         {
             label: "Tests Passing",
-            value: <CountUp value={212} />,
+            value: <CountUp value={236} />,
             icon: ClipboardCheck,
             color: "text-emerald-400",
             bg: "bg-emerald-500/10"

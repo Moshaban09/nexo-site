@@ -1,47 +1,45 @@
 import { motion } from 'framer-motion';
 import {
-    Activity,
-    ArrowRightLeft,
-    Atom,
-    Bot,
-    Box,
-    BrainCircuit,
-    ClipboardCheck,
-    Component,
-    Database,
-    FileCode,
-    FileJson,
-    FileType2,
-    Flag,
-    FolderTree,
-    FormInput,
-    Hammer,
-    HardDrive,
-    Layers,
-    Layout,
-    LayoutDashboard,
-    Lock,
-    Map,
-    Microscope,
-    Network,
-    Paintbrush,
-    Palette,
-    RefreshCw,
-    Rocket,
-    Route,
-    ScanEye,
-    Server,
-    ShieldAlert,
-    ShieldCheck,
-    Sparkles,
-    Stethoscope,
-    Terminal as TerminalIcon,
-    Wand2,
-    Waypoints,
-    Wind,
-    Workflow,
-    Zap,
-    type LucideIcon
+  Activity,
+  ArrowRightLeft,
+  Atom,
+  Bot,
+  Box,
+  BrainCircuit,
+  ClipboardCheck,
+  Component,
+  Database,
+  FileCode,
+  FileJson,
+  FileType2,
+  Flag,
+  FolderTree,
+  FormInput,
+  Hammer,
+  HardDrive,
+  Layers,
+  Layout,
+  LayoutDashboard,
+  Lock,
+  Map,
+  Network,
+  Paintbrush,
+  Palette,
+  RefreshCw,
+  Rocket,
+  Route,
+  ScanEye,
+  Server,
+  ShieldAlert,
+  ShieldCheck,
+  Stethoscope,
+  Terminal as TerminalIcon,
+  Wand2,
+  Waypoints,
+  Wind,
+  Workflow,
+  Zap,
+  type LucideIcon
 } from 'lucide-react';
 import { fadeIn } from '../../lib/animations';
 
@@ -241,11 +239,17 @@ const features: FeatureItem[] = [
 
   // Architecture & Tools (Indigo/Cyber)
   {
+    title: "Modular Architecture",
+    description: "Discreet, maintainable modules for maximum scalability and easy contribution",
+    icon: FolderTree,
+    color: "text-indigo-400",
+    bg: "bg-indigo-500/10",
+    border: "border-indigo-500/20"
+  },
+  {
     title: "Project Architecture",
     items: [
-        { name: "FSD", icon: Layers },
-        { name: "Feature-based", icon: FolderTree },
-        { name: "Clean Architecture", icon: Workflow }
+        { name: "Feature-based", icon: FolderTree }
     ],
     icon: Workflow,
     color: "text-indigo-400",
@@ -253,26 +257,14 @@ const features: FeatureItem[] = [
     border: "border-indigo-500/20"
   },
   {
-    title: "Security & QA",
+    title: "Security Guard",
+    description: "Advanced validation for write permissions, disk space, and path safety",
     items: [
         { name: "SBOM", icon: ShieldCheck },
         { name: "Zero-Trust", icon: Lock },
         { name: "System Check", icon: Bot }
     ],
-    description: "Built-in security audits and system health checks",
     icon: ShieldAlert,
-    color: "text-indigo-400",
-    bg: "bg-indigo-500/10",
-    border: "border-indigo-500/20"
-  },
-  {
-    title: "Visual Testing",
-    items: [
-        { name: "Storybook", icon: ScanEye },
-        { name: "Ladle", icon: Layout },
-        { name: "Auto-Story", icon: Sparkles }
-    ],
-    icon: Microscope,
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
     border: "border-indigo-500/20"

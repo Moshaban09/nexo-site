@@ -5,7 +5,7 @@ import {
     LayoutTemplate,
     Rocket,
 } from "lucide-react";
-import { CodeBlock, DocsLayout, Layout } from "../..";
+import { CodeBlock, DocsLayout } from "../..";
 
 const presets = [
   {
@@ -73,7 +73,6 @@ const presets = [
 
 export const DocsPresets = () => {
   return (
-    <Layout>
       <DocsLayout>
         <div className="space-y-12">
           <div className="max-w-3xl">
@@ -134,6 +133,5 @@ export const DocsPresets = () => {
           </div>
         </div>
       </DocsLayout>
-    </Layout>
   );
 };
