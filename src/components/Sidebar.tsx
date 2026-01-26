@@ -1,12 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Book, ChevronDown, Download, Github, Home, Layout, Menu, Package, Terminal, X, Zap } from "lucide-react";
 import { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDocsExpanded, setIsDocsExpanded] = useState(true);
-  const location = useLocation();
 
   const docsSubPages = [
     { name: "Introduction", path: "/docs", icon: Book },
